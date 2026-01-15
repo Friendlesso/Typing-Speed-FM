@@ -7,6 +7,7 @@ function App() {
   const [correctChar, setCorrectChar] = useState(0);
   const [finished, setFinished] = useState(false);
   const [incorrectChar, setIncorrectChar] = useState(0);
+  const [isStarted, setIsStarted] = useState(false);
   const [WPM, setWPM] = useState(0);
 
   // States that pull the state from LocalStorage
@@ -25,6 +26,8 @@ function App() {
           setCorrectChar={setCorrectChar}
           setIncorrectChar={setIncorrectChar}
           WPM={WPM}
+          isStarted={isStarted}
+          setIsStarted={setIsStarted}
         />
       )
       }

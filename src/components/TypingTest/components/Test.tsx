@@ -7,6 +7,8 @@ type TestProps = {
   charStatus: CharStatus[];
   index: number;
   inputRef: React.RefObject<HTMLInputElement | null>
+  isStarted: boolean;
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
@@ -16,6 +18,8 @@ export function Test(
     charStatus,
     index,
     inputRef,
+    isStarted,
+    setIsStarted,
     handleKeyDown,
   }: TestProps
 ) {
@@ -34,6 +38,11 @@ export function Test(
       className={`
           relative
           flex flex-col items-center
+          h-[80%]
+          ${isStarted
+            ? 'blur-none'
+            : 'blur-md'
+          }
         `}
     >
       <p className="text-white text-[2.5rem] leading-[136%] tracking-[0.4px]">
@@ -64,6 +73,9 @@ export function Test(
         type="text"
         readOnly
         name="TextInput"
+        onClick={() => {
+          setIsStarted(true);
+        }}
         className={`
           absolute
           top-0 right-0 left-0 bottom-0
