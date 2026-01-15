@@ -1,4 +1,4 @@
-import { useEffect} from "react"
+import { useEffect } from "react"
 
 type TimerProps = {
   time: number
@@ -7,6 +7,7 @@ type TimerProps = {
   finished: boolean
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
+  setCompleted: React.Dispatch<React.SetStateAction<number>>
 }
 
 
@@ -17,6 +18,7 @@ export function Timer({
   finished,
   timeLeft,
   setTimeLeft,
+  setCompleted
 }: TimerProps) {
 
 
@@ -34,8 +36,9 @@ export function Timer({
         if (prev <= 1) {
           clearInterval(intervalId)
           setTimeout(() => setFinished(true), 0)
-        } 
-        if(finished) {
+          setCompleted(prev => prev + 1)
+        }
+        if (finished) {
           clearInterval(intervalId);
           setTimeout(() => setFinished(false), 0)
         }
@@ -44,7 +47,7 @@ export function Timer({
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [isStarted, time, setFinished, setTimeLeft, finished])
+  }, [isStarted, time, setFinished, setTimeLeft, finished, setCompleted])
 
   return (
     <div className="border-r-2 border-(--neutral-700) px-3">

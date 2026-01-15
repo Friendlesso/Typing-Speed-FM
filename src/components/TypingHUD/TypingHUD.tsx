@@ -9,6 +9,7 @@ type TypingHUDProps = {
   time: number;
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
+  setCompleted: React.Dispatch<React.SetStateAction<number>>
   WPM: number;
 }
 
@@ -21,6 +22,7 @@ export function TypingHUD(
     time,
     timeLeft,
     setTimeLeft,
+    setCompleted,
     WPM,
   }: TypingHUDProps
 ) {
@@ -54,6 +56,7 @@ export function TypingHUD(
           setFinished={setFinished}
           finished={finished}
           isStarted={isStarted}
+          setCompleted={setCompleted}
         />
       </div>
       <div></div>

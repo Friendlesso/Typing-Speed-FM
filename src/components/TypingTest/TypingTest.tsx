@@ -15,6 +15,7 @@ type TypingTestProps = {
   time: number;
   timeLeft: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setCompleted: React.Dispatch<React.SetStateAction<number>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
@@ -31,14 +32,12 @@ export function TypingTest(
     incorrectChar,
     correctChar,
     setCorrectChar,
+    setCompleted,
     setIsStarted,
-    setIsNewPersonalBest,
     setIncorrectChar,
-    setPersonalBest,
     time,
     timeLeft,
     setFinished,
-    finished,
     setWPM
   }: TypingTestProps) {
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
@@ -73,6 +72,7 @@ export function TypingTest(
 
     if (totalChar === characters.length - 1) {
       setFinished(true);
+      setCompleted((prev => prev + 1))
     }
 
     setCharStatus((prev) => [

@@ -13,7 +13,9 @@ function App() {
   const [WPM, setWPM] = useState(0);
 
   // States that pull the state from LocalStorage
-  const [completed, setCompleted] = useState(0)
+  const [completed, setCompleted] = useState(() => {
+    return Number(localStorage.getItem("Comp") || 0)
+  })
   const [difficulty, setDifficulty] = useState()
   const [personalBest, setPersonalBest] = useState(() => {
     return Number(localStorage.getItem("PB") || 0)
@@ -24,16 +26,20 @@ function App() {
   )
 
   useEffect(() => {
+    localStorage.setItem("Comp", String(completed))
+  }, [completed])
+  
+  useEffect(() => {
     if (finished) {
       const prevPB = Number(localStorage.getItem("PB") || 0);
 
       // finalWPM is the current WPM state
       if (WPM > prevPB) {
         localStorage.setItem("PB", String(WPM));
-        setTimeout(() =>setPersonalBest(WPM),0);
-        setTimeout(() =>setIsNewPersonalBest(true));
+        setTimeout(() => setPersonalBest(WPM), 0);
+        setTimeout(() => setIsNewPersonalBest(true), 0);
       } else {
-        setTimeout(() =>setIsNewPersonalBest(false));
+        setTimeout(() => setIsNewPersonalBest(false), 0);
       }
     }
   }, [finished, WPM, setPersonalBest, setIsNewPersonalBest]);
@@ -49,6 +55,7 @@ function App() {
           accuracy={accuracy}
           setAccuracy={setAccuracy}
           correctChar={correctChar}
+          setCompleted={setCompleted}
           setCorrectChar={setCorrectChar}
           setFinished={setFinished}
           finished={finished}
