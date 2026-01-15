@@ -1,11 +1,13 @@
 import { TypingStats } from "../TypingStats";
 
 type TypingHUDProps = {
+  accuracy: number;
   WPM: number;
 }
 
 export function TypingHUD(
   {
+    accuracy,
     WPM,
   }: TypingHUDProps
 ) {
@@ -23,7 +25,7 @@ export function TypingHUD(
           statLabel="WPM"
         />
         <TypingStats
-          stat={98}
+          stat={accuracy}
           statLabel="Accuracy"
         />
       </div>
