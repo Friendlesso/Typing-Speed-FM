@@ -5,24 +5,29 @@ import { getRandomTest } from "../../utils/getRandomTest";
 import { StartTestBtn } from "./components/StartTestBtn";
 import { RestartTest } from "./components/RestartTest";
 import { getAccuracy } from "../../utils/getAccuracy";
+import { getWPM } from "../../utils/getWPM";
 
 type TypingTestProps = {
   setAccuracy: React.Dispatch<React.SetStateAction<number>>
   isStarted: boolean;
+  incorrectChar: number;
   correctChar: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setWPM: React.Dispatch<React.SetStateAction<number>>
 }
 
 export function TypingTest(
   {
     setAccuracy,
     isStarted,
+    incorrectChar,
     correctChar,
     setCorrectChar,
     setIsStarted,
     setIncorrectChar,
+    setWPM
   }: TypingTestProps) {
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
   const [index, setIndex] = useState(0);
@@ -67,8 +72,13 @@ export function TypingTest(
 
   // Hook to get the current accuracy.
   useEffect(() => {
-    setAccuracy(getAccuracy(correctChar,totalChar));
+    setAccuracy(getAccuracy(correctChar, totalChar));
   }, [setAccuracy, totalChar, correctChar])
+
+  // Hook to get the current WPM.
+  useEffect(() => {
+    setWPM(getWPM(totalChar, incorrectChar, 60 ))
+  },[totalChar, setWPM,incorrectChar])
 
   return (
     <section className="relative">

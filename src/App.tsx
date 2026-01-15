@@ -27,7 +27,9 @@ function App() {
           correctChar={correctChar}
           setCorrectChar={setCorrectChar}
           setIncorrectChar={setIncorrectChar}
+          incorrectChar={incorrectChar}
           WPM={WPM}
+          setWPM={setWPM}
           isStarted={isStarted}
           setIsStarted={setIsStarted}
         />

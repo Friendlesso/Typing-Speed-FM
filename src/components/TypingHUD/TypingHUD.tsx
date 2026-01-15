@@ -2,12 +2,14 @@ import { TypingStats } from "../TypingStats";
 
 type TypingHUDProps = {
   accuracy: number;
+  isStarted: boolean;
   WPM: number;
 }
 
 export function TypingHUD(
   {
     accuracy,
+    isStarted,
     WPM,
   }: TypingHUDProps
 ) {
@@ -23,10 +25,14 @@ export function TypingHUD(
         <TypingStats
           stat={WPM}
           statLabel="WPM"
+          isStarted={isStarted}
+          textColor="text-white"
         />
         <TypingStats
           stat={accuracy}
           statLabel="Accuracy"
+          isStarted={isStarted}
+          textColor="text-(--red-500)"
         />
       </div>
       <div></div>
