@@ -67,6 +67,7 @@ export function HomePage(
         setIsNewPersonalBest={setIsNewPersonalBest}
         setPersonalBest={setPersonalBest}
         setFinished={setFinished}
+        finished={finished}
         setWPM={setWPM}
       />
     </div>

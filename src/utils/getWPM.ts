@@ -5,7 +5,9 @@ export function getWPM(
   timeLeft: number
 ) {
   const timeMinutes = (time - timeLeft) / 60
+
+  if(timeMinutes <= 0) return 0;
+
   const WPM = ((totalChar - incorrectChar) / 5) / timeMinutes;
-  if (!WPM) return 0 
-  return Math.floor(WPM);
+  return Math.floor(Math.max(WPM, 0));
 }
