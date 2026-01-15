@@ -14,7 +14,11 @@ function App() {
 
   const [difficulty, setDifficulty] = useState()
   const [personalBest, setPersonalBest] = useState()
-  const [time, setTime] = useState()
+  const [time, setTime] = useState(60)
+
+  const [timeLeft, setTimeLeft] = useState<number>(() =>
+    typeof time === "number" ? time : 0
+  )
 
   return (
     <>
@@ -26,12 +30,17 @@ function App() {
           setAccuracy={setAccuracy}
           correctChar={correctChar}
           setCorrectChar={setCorrectChar}
+          setFinished={setFinished}
+          finished={finished}
           setIncorrectChar={setIncorrectChar}
           incorrectChar={incorrectChar}
-          WPM={WPM}
           setWPM={setWPM}
           isStarted={isStarted}
           setIsStarted={setIsStarted}
+          time={time}
+          timeLeft={timeLeft}
+          setTimeLeft={setTimeLeft}
+          WPM={WPM}
         />
       )
       }

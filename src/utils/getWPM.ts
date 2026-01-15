@@ -1,9 +1,11 @@
 export function getWPM(
   totalChar:number, 
   incorrectChar:number, 
-  time:number
+  time:number,
+  timeLeft: number
 ) {
-  const timeMinutes = time / 60
+  const timeMinutes = (time - timeLeft) / 60
   const WPM = ((totalChar - incorrectChar) / 5) / timeMinutes;
-  return WPM;
+  if (!WPM) return 0 
+  return Math.floor(WPM);
 }

@@ -5,9 +5,14 @@ type HomePageProps = {
   accuracy: number;
   setAccuracy: React.Dispatch<React.SetStateAction<number>>
   isStarted: boolean;
+  time: number
+  timeLeft: number;
+  setTimeLeft: React.Dispatch<React.SetStateAction<number>>
   incorrectChar: number;
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
-  correctChar: number
+  correctChar: number;
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  finished: boolean;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   WPM: number;
@@ -21,7 +26,12 @@ export function HomePage(
     isStarted,
     incorrectChar,
     setIsStarted,
+    time,
+    timeLeft,
+    setTimeLeft,
     correctChar,
+    setFinished,
+    finished,
     setCorrectChar,
     setIncorrectChar,
     WPM,
@@ -33,16 +43,24 @@ export function HomePage(
       <TypingHUD
         accuracy={accuracy}
         isStarted={isStarted}
+        setFinished={setFinished}
+        finished={finished}
         WPM={WPM}
+        time={time}
+        timeLeft={timeLeft}
+        setTimeLeft={setTimeLeft}
       />
       <TypingTest
         setAccuracy={setAccuracy}
         isStarted={isStarted}
+        time={time}
+        timeLeft={timeLeft}
         incorrectChar={incorrectChar}
         correctChar={correctChar}
         setCorrectChar={setCorrectChar}
         setIsStarted={setIsStarted}
         setIncorrectChar={setIncorrectChar}
+        setFinished={setFinished}
         setWPM={setWPM}
       />
     </div>

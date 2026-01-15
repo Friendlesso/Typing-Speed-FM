@@ -12,9 +12,12 @@ type TypingTestProps = {
   isStarted: boolean;
   incorrectChar: number;
   correctChar: number;
+  time: number;
+  timeLeft: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
   setWPM: React.Dispatch<React.SetStateAction<number>>
 }
 
@@ -27,6 +30,9 @@ export function TypingTest(
     setCorrectChar,
     setIsStarted,
     setIncorrectChar,
+    time,
+    timeLeft,
+    setFinished,
     setWPM
   }: TypingTestProps) {
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
@@ -59,6 +65,10 @@ export function TypingTest(
       return;
     };
 
+    if (totalChar === characters.length - 1) {
+      setFinished(true);
+    }
+
     setCharStatus((prev) => [
       ...prev,
       typedChar === expectedChar ? 'correct' : 'incorrect'
@@ -77,8 +87,8 @@ export function TypingTest(
 
   // Hook to get the current WPM.
   useEffect(() => {
-    setWPM(getWPM(totalChar, incorrectChar, 60 ))
-  },[totalChar, setWPM,incorrectChar])
+    setWPM(getWPM(totalChar, incorrectChar, time, timeLeft))
+  })
 
   return (
     <section className="relative">
