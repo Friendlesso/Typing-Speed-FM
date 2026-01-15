@@ -23,6 +23,8 @@ function App() {
       {!finished && (
         <HomePage
           accuracy={accuracy}
+          setAccuracy={setAccuracy}
+          correctChar={correctChar}
           setCorrectChar={setCorrectChar}
           setIncorrectChar={setIncorrectChar}
           WPM={WPM}

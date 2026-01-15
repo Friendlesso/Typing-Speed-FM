@@ -1,12 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Test } from "./components/Test";
 import type { CharStatus, TestText } from "../../types/TestTypes";
 import { getRandomTest } from "../../utils/getRandomTest";
 import { StartTestBtn } from "./components/StartTestBtn";
 import { RestartTest } from "./components/RestartTest";
+import { getAccuracy } from "../../utils/getAccuracy";
 
 type TypingTestProps = {
+  setAccuracy: React.Dispatch<React.SetStateAction<number>>
   isStarted: boolean;
+  correctChar: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
@@ -14,7 +17,9 @@ type TypingTestProps = {
 
 export function TypingTest(
   {
+    setAccuracy,
     isStarted,
+    correctChar,
     setCorrectChar,
     setIsStarted,
     setIncorrectChar,
@@ -38,6 +43,7 @@ export function TypingTest(
     setTest(getRandomTest('Easy'))
   }
 
+  // Function to handleKeyDown for Typing
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
     const typedChar = e.key;
@@ -58,6 +64,11 @@ export function TypingTest(
     setIndex((index) => index + 1);
     setTotalChar((totalChar) => totalChar + 1)
   }
+
+  // Hook to get the current accuracy.
+  useEffect(() => {
+    setAccuracy(getAccuracy(correctChar,totalChar));
+  }, [setAccuracy, totalChar, correctChar])
 
   return (
     <section className="relative">
