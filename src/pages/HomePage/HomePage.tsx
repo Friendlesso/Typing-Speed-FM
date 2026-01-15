@@ -3,12 +3,16 @@ import { TypingTest } from "../../components/TypingTest/TypingTest";
 
 type HomePageProps = {
   accuracy: number;
+  setCorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   WPM: number;
 }
 
 export function HomePage(
   {
     accuracy,
+    setCorrectChar,
+    setIncorrectChar,
     WPM,
   }: HomePageProps
 ) {
@@ -18,7 +22,9 @@ export function HomePage(
         accuracy={accuracy}
         WPM={WPM}
       />
-      <TypingTest 
+      <TypingTest
+        setCorrectChar={setCorrectChar}
+        setIncorrectChar={setIncorrectChar}
       />
     </div>
   )

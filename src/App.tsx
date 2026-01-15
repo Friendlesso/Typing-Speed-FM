@@ -4,9 +4,9 @@ import { HomePage } from "./pages/HomePage";
 
 function App() {
   const [accuracy, setAccuracy] = useState(0);
-  const [correctChar, setCorrectChar] = useState();
+  const [correctChar, setCorrectChar] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [incorrectChar, setIncorrectChar] = useState();
+  const [incorrectChar, setIncorrectChar] = useState(0);
   const [WPM, setWPM] = useState(0);
 
   // States that pull the state from LocalStorage
@@ -20,11 +20,13 @@ function App() {
       <Header />
       {/* Change this later for ? : */}
       {!finished && (
-          <HomePage
-            WPM={WPM}
-            accuracy={accuracy}
-          />
-        )
+        <HomePage
+          accuracy={accuracy}
+          setCorrectChar={setCorrectChar}
+          setIncorrectChar={setIncorrectChar}
+          WPM={WPM}
+        />
+      )
       }
 
     </>
