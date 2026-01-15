@@ -21,7 +21,6 @@ export function TypingStats(
     borderClass,
   }: TypingStatsProps
 ) {
-  console.log(stat);
   return (
     <div className={`${borderClass} border-(--neutral-700)`}>
       <p className={`text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem] ${textAligment ? `${textAligment}` : ""}`}>

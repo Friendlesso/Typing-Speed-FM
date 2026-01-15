@@ -19,6 +19,7 @@ type TypingTestProps = {
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  finished: boolean;
   setPersonalBest: React.Dispatch<React.SetStateAction<number>>
   setWPM: React.Dispatch<React.SetStateAction<number>>
 }
@@ -37,6 +38,7 @@ export function TypingTest(
     time,
     timeLeft,
     setFinished,
+    finished,
     setWPM
   }: TypingTestProps) {
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
@@ -89,20 +91,12 @@ export function TypingTest(
     setAccuracy(getAccuracy(correctChar, totalChar));
   }, [setAccuracy, totalChar, correctChar])
 
-  // Hook to get the current WPM.
-  useEffect(() => {
-    const finalWPM = getWPM(totalChar, incorrectChar, time, timeLeft);
-    setWPM(finalWPM);
 
-    const prevPB = Number(localStorage.getItem("PB") || 0);
-    if (finalWPM > prevPB) {
-      localStorage.setItem("PB", String(finalWPM));
-      setPersonalBest(finalWPM)
-      setIsNewPersonalBest(true);
-    } else {
-      setIsNewPersonalBest(false);
-    }
-  })
+  useEffect(() => {
+    const currentWPM = getWPM(totalChar, incorrectChar, time, timeLeft);
+    setWPM(currentWPM);
+  }, [totalChar, incorrectChar, time, timeLeft, setWPM])
+
 
   return (
     <section className="relative">

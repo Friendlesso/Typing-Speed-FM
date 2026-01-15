@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "./components/Header"
 import { HomePage } from "./pages/HomePage";
 import { ResultPage } from "./pages/ResultPage";
@@ -19,14 +19,28 @@ function App() {
     return Number(localStorage.getItem("PB") || 0)
   })
   const [time, setTime] = useState(60)
-
   const [timeLeft, setTimeLeft] = useState<number>(() =>
     typeof time === "number" ? time : 0
   )
 
+  useEffect(() => {
+    if (finished) {
+      const prevPB = Number(localStorage.getItem("PB") || 0);
+
+      // finalWPM is the current WPM state
+      if (WPM > prevPB) {
+        localStorage.setItem("PB", String(WPM));
+        setTimeout(() =>setPersonalBest(WPM),0);
+        setTimeout(() =>setIsNewPersonalBest(true));
+      } else {
+        setTimeout(() =>setIsNewPersonalBest(false));
+      }
+    }
+  }, [finished, WPM, setPersonalBest, setIsNewPersonalBest]);
+
   return (
     <>
-      <Header 
+      <Header
         personalBest={personalBest}
       />
       {/* Change this later for ? : */}
