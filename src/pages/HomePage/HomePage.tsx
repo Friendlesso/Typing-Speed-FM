@@ -15,6 +15,8 @@ type HomePageProps = {
   finished: boolean;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setPersonalBest: React.Dispatch<React.SetStateAction<number>>
+  setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
   WPM: number;
   setWPM: React.Dispatch<React.SetStateAction<number>>
 }
@@ -34,6 +36,8 @@ export function HomePage(
     finished,
     setCorrectChar,
     setIncorrectChar,
+    setPersonalBest,
+    setIsNewPersonalBest,
     WPM,
     setWPM,
   }: HomePageProps
@@ -60,6 +64,8 @@ export function HomePage(
         setCorrectChar={setCorrectChar}
         setIsStarted={setIsStarted}
         setIncorrectChar={setIncorrectChar}
+        setIsNewPersonalBest={setIsNewPersonalBest}
+        setPersonalBest={setPersonalBest}
         setFinished={setFinished}
         setWPM={setWPM}
       />

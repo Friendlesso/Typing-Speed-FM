@@ -3,8 +3,11 @@
 type TypingStatsProps = {
   stat: number;
   statLabel: string;
-  isStarted: boolean
+  isStarted?: boolean
   textColor?: string;
+  textAligment?: string;
+  borderClass?: string;
+  paddingAligment?: string;
 }
 
 export function TypingStats(
@@ -13,14 +16,17 @@ export function TypingStats(
     statLabel,
     isStarted,
     textColor,
+    textAligment,
+    paddingAligment,
+    borderClass,
   }: TypingStatsProps
 ) {
   console.log(stat);
   return (
-    <div className="border-r-2 border-(--neutral-700) px-3">
-      <p className="text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem] ">
+    <div className={`${borderClass} border-(--neutral-700)`}>
+      <p className={`text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem] ${textAligment ? `${textAligment}` : ""}`}>
         {statLabel}:
-        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold pl-3`}>
+        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold ${paddingAligment ? `${paddingAligment}` : 'pl-3'} `}>
         {stat} {statLabel === "Accuracy" && '%'}
         </span>
       </p>

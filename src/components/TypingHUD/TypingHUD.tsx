@@ -38,12 +38,14 @@ export function TypingHUD(
           statLabel="WPM"
           isStarted={isStarted}
           textColor="text-white"
+          borderClass="border-r-2 px-3"
         />
         <TypingStats
           stat={accuracy}
           statLabel="Accuracy"
           isStarted={isStarted}
           textColor="text-(--red-500)"
+          borderClass="border-r-2 px-3"
         />
         <Timer
           time={time}

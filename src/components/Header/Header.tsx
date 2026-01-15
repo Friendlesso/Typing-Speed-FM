@@ -1,11 +1,19 @@
 import { Logo } from "./Logo";
 import { PersonalBest } from "./PersonalBest";
 
-export function Header() {
+type HeaderProps = {
+  personalBest: number;
+}
+
+export function Header({
+  personalBest
+}: HeaderProps) {
   return (
     <header className="flex justify-between items-center">
       <Logo />
-      <PersonalBest />
+      <PersonalBest
+        personalBest={personalBest}
+      />
     </header>
   )
 }
