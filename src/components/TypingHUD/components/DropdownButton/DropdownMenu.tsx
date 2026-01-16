@@ -38,7 +38,7 @@ export function DropdownMenu<T>({
         flex flex-col gap-2 py-2.5
         transition-[max-height, opacity] duration-300 ease-in-out
         ${langStyle
-          ? 'overflow-none w-full right-0 '
+          ? 'overflow-none w-fit right-0 '
           : 'overflow-hidden sm:w-full w-fit left-0'
         }
         ${isOpen
