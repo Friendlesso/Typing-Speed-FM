@@ -5,6 +5,7 @@ type DropdownMenuProps<T> = {
   items: DropdownItemProp<T>[]
   isOpen: boolean
   selected: T
+  langStyle: string | undefined
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
@@ -17,6 +18,7 @@ export function DropdownMenu<T>({
   isOpen,
   setOpen,
   selected,
+  langStyle,
   setIsStarted,
   setButtonLabel,
   selectedSetting,
@@ -27,14 +29,16 @@ export function DropdownMenu<T>({
       role="Menu"
       className={`
         absolute 
-        top-10 left-0 
+        top-10 
         bg-(--neutral-800) 
-        w-full
         z-10
         rounded-lg
         flex flex-col gap-2 py-2.5
         transition-[max-height, opacity] duration-300 ease-in-out
-        overflow-hidden
+        ${langStyle
+          ? 'overflow-none w-fit right-0'
+          : 'overflow-hidden w-full left-0'
+        }
         ${isOpen
           ? 'max-h-90 opacity-100  pointer-events-auto'
           : 'max-h-0 opacity-0 pointer-events-none'
@@ -48,6 +52,7 @@ export function DropdownMenu<T>({
           value={item.value}
           setOpen={setOpen}
           selected={selected}
+          langStyle={langStyle}
           setButtonLabel={setButtonLabel}
           setIsStarted={setIsStarted}
           selectedSetting={selectedSetting}

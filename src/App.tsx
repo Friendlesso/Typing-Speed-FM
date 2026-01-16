@@ -2,18 +2,21 @@ import { useEffect, useState } from "react";
 import { Header } from "./components/Header"
 import { HomePage } from "./pages/HomePage";
 import { ResultPage } from "./pages/ResultPage";
-import type { DifficultyValue, TimeDropdownValue } from "./types/dropdown";
+import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "./types/dropdown";
 
 function App() {
   const [accuracy, setAccuracy] = useState(0);
   const [correctChar, setCorrectChar] = useState(0);
-  const [finished, setFinished] = useState(true);
+  const [finished, setFinished] = useState(false);
   const [incorrectChar, setIncorrectChar] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [isNewPersonalBest, setIsNewPersonalBest] = useState(false);
   const [WPM, setWPM] = useState(0);
 
   // States that pull the state from LocalStorage
+  const [language, setLanguage] = useState<LanguageValue>(
+    (localStorage.getItem("lang") as LanguageValue) || "en"
+  )
   const [completed, setCompleted] = useState(() => {
     return Number(localStorage.getItem("Comp") || 0)
   })
@@ -23,14 +26,14 @@ function App() {
   const [personalBest, setPersonalBest] = useState(() => {
     return Number(localStorage.getItem("PB") || 0)
   })
-const [time, setTime] = useState<TimeDropdownValue>(() => {
-  const saved = localStorage.getItem("time");
-  if (saved === "Passage") return "Passage";
-  if (saved === "15" || saved === "30" || saved === "60" || saved === "120") {
-    return Number(saved) as TimeDropdownValue;
-  }
-  return 60; // default
-});
+  const [time, setTime] = useState<TimeDropdownValue>(() => {
+    const saved = localStorage.getItem("time");
+    if (saved === "Passage") return "Passage";
+    if (saved === "15" || saved === "30" || saved === "60" || saved === "120") {
+      return Number(saved) as TimeDropdownValue;
+    }
+    return 60; // default
+  });
   const [timeLeft, setTimeLeft] = useState<number>(() =>
     typeof time === "number" ? time : 0
   )
@@ -81,6 +84,8 @@ const [time, setTime] = useState<TimeDropdownValue>(() => {
           setIsNewPersonalBest={setIsNewPersonalBest}
           time={time}
           setTime={setTime}
+          language={language}
+          setLanguage={setLanguage}
           timeLeft={timeLeft}
           setTimeLeft={setTimeLeft}
           difficulty={difficulty}

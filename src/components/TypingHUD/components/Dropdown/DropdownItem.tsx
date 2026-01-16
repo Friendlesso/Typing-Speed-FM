@@ -2,6 +2,7 @@ type DropdownItemCompProps<T> = {
   label: string;
   value: T;
   selected: T;
+  langStyle: string | undefined
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
@@ -14,6 +15,7 @@ export function DropdownItem<T>({
   value,
   setOpen,
   selected,
+  langStyle,
   setButtonLabel,
   setIsStarted,
   localStorageKey,
@@ -43,7 +45,7 @@ export function DropdownItem<T>({
            group-hover:border-4 
            group-hover:border-(--blue-400) 
           rounded-full
-          ${isSelected 
+          ${isSelected
             ? 'border-4 border-(--blue-400)'
             : 'border-white border'
           }
@@ -52,7 +54,11 @@ export function DropdownItem<T>({
       <button
         className="w-full text-left cursor-pointer"
         onClick={() => {
-          setButtonLabel(label);
+          if (langStyle) {
+            setButtonLabel('');
+          } else {
+            setButtonLabel(label);
+          }
           selectedSetting(value)
           setOpen(false);
           setIsStarted(false);

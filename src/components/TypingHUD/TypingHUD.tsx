@@ -1,5 +1,6 @@
 import IconDropDown from '../../assets/icons/icon-down-arrow.svg';
-import { difficultyItems, TimeItems, type DifficultyValue, type TimeDropdownValue } from '../../types/dropdown';
+import IconLang from '../../assets/icons/icon-language.svg'
+import { difficultyItems, languagesItems, TimeItems, type DifficultyValue, type LanguageValue, type TimeDropdownValue } from '../../types/dropdown';
 import { TypingStats } from "../TypingStats";
 import { DropdownButton } from "./components/Dropdown/DropdownButton";
 import { Timer } from "./components/Timer/Timer";
@@ -11,6 +12,8 @@ type TypingHUDProps = {
   finished: boolean;
   time: TimeDropdownValue;
   difficulty: DifficultyValue
+  language: LanguageValue;
+  setLanguage: React.Dispatch<React.SetStateAction<LanguageValue>>;
   setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>
   setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>
   timeLeft: number;
@@ -30,6 +33,8 @@ export function TypingHUD(
     setTime,
     difficulty,
     setDifficulty,
+    language,
+    setLanguage,
     timeLeft,
     setIsStarted,
     setTimeLeft,
@@ -40,11 +45,11 @@ export function TypingHUD(
   return (
     <section
       className={`
-        flex lg:flex-row flex-col
+        flex xl:flex-row flex-col
         justify-between
         items-center
         border-b-2 border-(--neutral-700)
-        pb-4 gap-4 lg:gap-0
+        pb-4 gap-4 xl:gap-0
       `}
     >
       <div className="flex items-center sm:w-fit w-full">
@@ -77,6 +82,7 @@ export function TypingHUD(
       <div
         className={`
           flex 
+          gap-2
           items-center 
           sm:justify-end  justify-center
           sm:w-fit w-full
@@ -100,6 +106,16 @@ export function TypingHUD(
           selected={time}
           selectedSetting={setTime}
           setIsStarted={setIsStarted}
+        />
+        <DropdownButton<LanguageValue>
+          items={languagesItems}
+          localStorageKey="lang"
+          defaultLabel=''
+          buttonIcon={IconLang}
+          selected={language}
+          selectedSetting={setLanguage}
+          setIsStarted={setIsStarted}
+          langStyle='w-fit'
         />
       </div>
     </section>

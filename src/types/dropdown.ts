@@ -2,6 +2,8 @@ export type DifficultyValue = 'Easy' | 'Medium' | 'Hard'
 
 export type TimeDropdownValue = 15 | 30 | 60 | 120 | "Passage";
 
+export type LanguageValue = "en" | "es" | 'fr';
+
 export type DropdownItemProp<T> = {
   label: string;
   value: T;
@@ -11,6 +13,12 @@ export const difficultyItems: DropdownItemProp<DifficultyValue>[] = [
   { label: "Easy", value: "Easy" },
   { label: "Medium", value: "Medium" },
   { label: "Hard", value: "Hard" },
+]
+
+export const languagesItems: DropdownItemProp<LanguageValue>[] = [
+  { label: "English", value: "en" },
+  { label: "Spanish", value: "es" },
+  { label: "French", value: "fr" },
 ]
 
 export const TimeItems: DropdownItemProp<TimeDropdownValue>[] = [
