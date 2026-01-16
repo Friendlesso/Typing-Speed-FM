@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Test } from "./components/Test";
 import type { CharStatus, TestText } from "../../types/TestTypes";
 import { getRandomTest } from "../../utils/getRandomTest";
@@ -57,6 +57,7 @@ export function TypingTest(
     setWPM,
     handleRestart
   }: TypingTestProps) {
+    const [typedInput, setTypedInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null)
 
   const characters = test?.text.split("");
@@ -70,35 +71,41 @@ export function TypingTest(
   }, [difficulty, language, setTest])
 
   // Function to handleKeyDown for Typing
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!isStarted) {
-      setIsStarted(true);
-    }
+  useEffect(() => {
+    setTest(getRandomTest(language, difficulty));
+  }, [difficulty, language, setTest]);
 
-    let typedChar = e.key;
+  const handleChar = (typedChar: string) => {
     const expectedChar = test.text[index];
-
-    if ( typedChar === "undefined" && e.nativeEvent instanceof InputEvent) {
-      typedChar = (e.nativeEvent as any).data || "";
-    };
-
-    if (typedChar === "Backspace" || typedChar === "CapsLock") return;
+    if (!typedChar) return;
 
     if (totalChar === characters.length - 1) {
       setFinished(true);
-      setCompleted((prev => prev + 1))
+      setCompleted((prev) => prev + 1);
     }
 
     setCharStatus((prev) => [
       ...prev,
-      typedChar === expectedChar ? 'correct' : 'incorrect'
-    ])
+      typedChar === expectedChar ? "correct" : "incorrect",
+    ]);
 
     setCorrectChar((char) => (typedChar === expectedChar ? char + 1 : char));
-    setIncorrectChar((wrongChar) => typedChar !== expectedChar ? wrongChar + 1 : wrongChar);
-    setIndex((index) => index + 1);
-    setTotalChar((totalChar) => totalChar + 1)
-  }
+    setIncorrectChar((wrongChar) =>
+      typedChar !== expectedChar ? wrongChar + 1 : wrongChar
+    );
+    setIndex((i) => i + 1);
+    setTotalChar((t) => t + 1);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (!value) return;
+
+    const char = value.slice(-1); // take the last character typed
+    handleChar(char);
+
+    setTypedInput(""); // reset input after reading
+  };
 
   // Hook to get the current accuracy.
   useEffect(() => {
@@ -122,8 +129,9 @@ export function TypingTest(
         index={index}
         inputRef={inputRef}
         isStarted={isStarted}
+        typedInput={typedInput}
         setIsStarted={setIsStarted}
-        handleKeyDown={handleKeyDown}
+        handleChange={handleChange}
       />
       <StartTestBtn
         inputRef={inputRef}

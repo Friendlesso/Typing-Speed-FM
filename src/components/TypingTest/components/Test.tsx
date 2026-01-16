@@ -7,9 +7,10 @@ type TestProps = {
   charStatus: CharStatus[];
   index: number;
   inputRef: React.RefObject<HTMLInputElement | null>
+  typedInput: string;
   isStarted: boolean;
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
-  handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export function Test(
@@ -19,8 +20,9 @@ export function Test(
     index,
     inputRef,
     isStarted,
+    typedInput,
     setIsStarted,
-    handleKeyDown,
+    handleChange,
   }: TestProps
 ) {
 
@@ -74,6 +76,7 @@ export function Test(
         ref={inputRef}
         type="text"
         name="TextInput"
+        value={typedInput}
         onClick={() => {
           setIsStarted(true);
         }}
@@ -84,7 +87,7 @@ export function Test(
           opacity-0
           cursor-pointer
         `}
-        onKeyDown={handleKeyDown}
+        onChange={handleChange}
       />
     </div>
   )
