@@ -1,4 +1,7 @@
+import IconDropDown from '../../assets/icons/icon-down-arrow.svg';
+import { difficultyItems, TimeItems, type DifficultyValue, type TimeDropdownValue } from '../../types/dropdown';
 import { TypingStats } from "../TypingStats";
+import { DropdownButton } from "./components/Dropdown/DropdownButton";
 import { Timer } from "./components/Timer/Timer";
 
 type TypingHUDProps = {
@@ -6,7 +9,9 @@ type TypingHUDProps = {
   isStarted: boolean;
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
   finished: boolean;
-  time: number;
+  time: TimeDropdownValue;
+  setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>
+  setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
   setCompleted: React.Dispatch<React.SetStateAction<number>>
@@ -20,6 +25,8 @@ export function TypingHUD(
     setFinished,
     finished,
     time,
+    setTime,
+    setDifficulty,
     timeLeft,
     setTimeLeft,
     setCompleted,
@@ -59,7 +66,24 @@ export function TypingHUD(
           setCompleted={setCompleted}
         />
       </div>
-      <div></div>
+      <div className='flex items-center'>
+        <DropdownButton
+          items={difficultyItems}
+          settingLabel="Difficulty"
+          defaultLabel="Easy"
+          localStorageKey="diff"
+          buttonIcon={IconDropDown}
+          selectedSetting={setDifficulty}
+        />
+        <DropdownButton
+          items={TimeItems}
+          settingLabel="Mode"
+          defaultLabel="60s"
+          localStorageKey="time"
+          buttonIcon={IconDropDown}
+          selectedSetting={setTime}
+        />
+      </div>
     </section>
   )
 }

@@ -1,11 +1,13 @@
 import { TypingHUD } from "../../components/TypingHUD/TypingHUD";
 import { TypingTest } from "../../components/TypingTest/TypingTest";
+import type { DifficultyValue, TimeDropdownValue } from "../../types/dropdown";
 
 type HomePageProps = {
   accuracy: number;
   setAccuracy: React.Dispatch<React.SetStateAction<number>>
   isStarted: boolean;
-  time: number
+  time: TimeDropdownValue;
+  setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>;
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
   incorrectChar: number;
@@ -18,6 +20,8 @@ type HomePageProps = {
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   setPersonalBest: React.Dispatch<React.SetStateAction<number>>
   setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
+  difficulty: DifficultyValue
+  setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>;
   WPM: number;
   setWPM: React.Dispatch<React.SetStateAction<number>>
 }
@@ -29,6 +33,7 @@ export function HomePage(
     isStarted,
     incorrectChar,
     setIsStarted,
+    setTime,
     time,
     timeLeft,
     setTimeLeft,
@@ -40,6 +45,8 @@ export function HomePage(
     setIncorrectChar,
     setPersonalBest,
     setIsNewPersonalBest,
+    difficulty,
+    setDifficulty,
     WPM,
     setWPM,
   }: HomePageProps
@@ -54,6 +61,8 @@ export function HomePage(
         finished={finished}
         WPM={WPM}
         time={time}
+        setTime={setTime}
+        setDifficulty={setDifficulty}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
       />
@@ -61,6 +70,7 @@ export function HomePage(
         setAccuracy={setAccuracy}
         isStarted={isStarted}
         time={time}
+        difficulty={difficulty}
         timeLeft={timeLeft}
         incorrectChar={incorrectChar}
         correctChar={correctChar}

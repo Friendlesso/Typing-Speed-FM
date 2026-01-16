@@ -1,7 +1,8 @@
 import { useEffect } from "react"
+import type { TimeDropdownValue } from "../../../../types/dropdown";
 
 type TimerProps = {
-  time: number
+  time: TimeDropdownValue
   isStarted: boolean;
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
   finished: boolean

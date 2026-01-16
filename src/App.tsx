@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./components/Header"
 import { HomePage } from "./pages/HomePage";
 import { ResultPage } from "./pages/ResultPage";
+import type { DifficultyValue, TimeDropdownValue } from "./types/dropdown";
 
 function App() {
   const [accuracy, setAccuracy] = useState(0);
@@ -16,11 +17,13 @@ function App() {
   const [completed, setCompleted] = useState(() => {
     return Number(localStorage.getItem("Comp") || 0)
   })
-  const [difficulty, setDifficulty] = useState()
+  const [difficulty, setDifficulty] = useState<DifficultyValue>(
+    (localStorage.getItem("diff") as DifficultyValue) || "Easy"
+  )
   const [personalBest, setPersonalBest] = useState(() => {
     return Number(localStorage.getItem("PB") || 0)
   })
-  const [time, setTime] = useState(60)
+  const [time, setTime] = useState<TimeDropdownValue>(60)
   const [timeLeft, setTimeLeft] = useState<number>(() =>
     typeof time === "number" ? time : 0
   )
@@ -67,8 +70,11 @@ function App() {
           setPersonalBest={setPersonalBest}
           setIsNewPersonalBest={setIsNewPersonalBest}
           time={time}
+          setTime={setTime}
           timeLeft={timeLeft}
           setTimeLeft={setTimeLeft}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
           WPM={WPM}
         />
       )

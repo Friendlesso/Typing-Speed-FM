@@ -6,13 +6,15 @@ import { StartTestBtn } from "./components/StartTestBtn";
 import { RestartTest } from "./components/RestartTest";
 import { getAccuracy } from "../../utils/getAccuracy";
 import { getWPM } from "../../utils/getWPM";
+import type { DifficultyValue, TimeDropdownValue } from "../../types/dropdown";
 
 type TypingTestProps = {
   setAccuracy: React.Dispatch<React.SetStateAction<number>>
   isStarted: boolean;
   incorrectChar: number;
   correctChar: number;
-  time: number;
+  time: TimeDropdownValue;
+  difficulty: DifficultyValue;
   timeLeft: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setCompleted: React.Dispatch<React.SetStateAction<number>>
@@ -36,6 +38,7 @@ export function TypingTest(
     setIsStarted,
     setIncorrectChar,
     time,
+    difficulty,
     timeLeft,
     setFinished,
     setWPM
@@ -43,7 +46,7 @@ export function TypingTest(
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
   const [index, setIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null)
-  const [test, setTest] = useState<TestText>(getRandomTest('Easy'));
+  const [test, setTest] = useState<TestText>(getRandomTest(difficulty));
   const [totalChar, setTotalChar] = useState(0);
 
   const characters = test?.text.split("");
@@ -52,6 +55,10 @@ export function TypingTest(
       inputRef.current?.focus();
   })
 
+  useEffect(() => {
+    setTest(getRandomTest(difficulty))
+  }, [difficulty])
+  
   // Function to Handle restarting the test
   const handleTestRestart = () => {
     setCorrectChar(0);
@@ -60,7 +67,7 @@ export function TypingTest(
     setIndex(0);
     setIsStarted(false);
     setTotalChar(0);
-    setTest(getRandomTest('Easy'))
+    setTest(getRandomTest(difficulty))
   }
 
   // Function to handleKeyDown for Typing
@@ -100,7 +107,7 @@ export function TypingTest(
 
 
   useEffect(() => {
-    const currentWPM = getWPM(totalChar, incorrectChar, time, timeLeft);
+    const currentWPM = getWPM(totalChar, incorrectChar, Number(time), timeLeft);
     setWPM(currentWPM);
   }, [totalChar, incorrectChar, time, timeLeft, setWPM])
 
