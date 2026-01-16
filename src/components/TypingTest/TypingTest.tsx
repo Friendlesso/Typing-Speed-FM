@@ -82,6 +82,8 @@ export function TypingTest(
       typedChar = (e.nativeEvent as any).data || "";
     };
 
+    if (typedChar === "Backspace" || typedChar === "CapsLock") return;
+
     if (totalChar === characters.length - 1) {
       setFinished(true);
       setCompleted((prev => prev + 1))
