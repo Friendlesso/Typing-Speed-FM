@@ -133,6 +133,9 @@ export function TypingTest(
       {isStarted && (
         <RestartTest
           handleRestart={handleTestRestart}
+          border="border-t-2 border-(--neutral-700)"
+          colors=" bg-(--neutral-800) hover:bg-(--neutral-0) text-white hover:text-(--neutral-900) "
+          invert="group-hover:invert "
         />
       )}
     </section>

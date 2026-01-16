@@ -5,7 +5,7 @@ import { ResultContent } from "../../components/ResultContent/ResultContent";
 import { ResultIcon } from '../../components/ResultIcon/ResultIcon';
 import { TotalCharStat } from "../../components/TotalCharStat/TotalCharStat";
 import { TypingStats } from "../../components/TypingStats";
-import { GoAgain } from '../../components/GoAgain/GoAgain';
+import { RestartTest } from '../../components/TypingTest/components/RestartTest';
 
 type ResultPageProps = {
   accuracy: number;
@@ -89,8 +89,10 @@ export function ResultPage({
           incorrectChar={incorrectChar}
         />
       </div>
-      <GoAgain
+      <RestartTest
         setFinished={setFinished}
+        colors='hover:bg-(--neutral-800) bg-(--neutral-0) hover:text-white text-(--neutral-900)'
+        invert=' invert group-hover:invert-0 '
       />
     </section>
   )
