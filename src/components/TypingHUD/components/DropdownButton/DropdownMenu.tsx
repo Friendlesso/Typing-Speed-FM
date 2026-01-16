@@ -5,12 +5,13 @@ type DropdownMenuProps<T> = {
   items: DropdownItemProp<T>[]
   isOpen: boolean
   selected: T
+  localStorageKey: string
   langStyle: string | undefined
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
-  localStorageKey: string
 }
 
 export function DropdownMenu<T>({

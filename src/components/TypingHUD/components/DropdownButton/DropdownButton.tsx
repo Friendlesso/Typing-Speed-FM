@@ -3,26 +3,27 @@ import { DropdownMenu } from "./DropdownMenu"
 import type { DropdownItemProp } from "../../../../types/dropdown"
 
 type DropdownButtonProps<T> = {
-  items: DropdownItemProp<T>[];
-  settingLabel?: string
-  defaultLabel: string
-  localStorageKey: string
   buttonIcon?: string
+  defaultLabel: string
+  items: DropdownItemProp<T>[];
   selected: T
+  settingLabel?: string
+  localStorageKey: string
+  langStyle?: string | undefined;
+
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
-  langStyle?: string | undefined;
 }
 
 export function DropdownButton<T>({
-  items,
-  settingLabel,
-  selected,
-  selectedSetting,
-  defaultLabel,
-  localStorageKey,
   buttonIcon,
+  defaultLabel,
+  items,
+  selected,
+  settingLabel,
+  selectedSetting,
   setIsStarted,
+  localStorageKey,
   langStyle
 }: DropdownButtonProps<T>) {
 
@@ -81,15 +82,15 @@ export function DropdownButton<T>({
           />
         </button>
         <DropdownMenu
+          setButtonLabel={setButtonLabel}
           items={items}
           isOpen={open}
           setOpen={setOpen}
           selected={selected}
-          langStyle={langStyle}
           selectedSetting={selectedSetting}
-          setButtonLabel={setButtonLabel}
           setIsStarted={setIsStarted}
           localStorageKey={localStorageKey}
+          langStyle={langStyle}
         />
       </div>
     </div>

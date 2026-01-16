@@ -9,55 +9,52 @@ import { getWPM } from "../../utils/getWPM";
 import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "../../types/dropdown";
 
 type TypingTestProps = {
-  setAccuracy: React.Dispatch<React.SetStateAction<number>>
+  charStatus: CharStatus[]
+  correctChar: number;
+  difficulty: DifficultyValue;
+  finished: boolean;
   isStarted: boolean;
   incorrectChar: number;
-  correctChar: number;
-  time: TimeDropdownValue;
-  difficulty: DifficultyValue;
+  index: number
   language: LanguageValue
+  time: TimeDropdownValue;
+  totalChar: number;
   timeLeft: number;
+  test: TestText
+
+  setAccuracy: React.Dispatch<React.SetStateAction<number>>
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
   setCompleted: React.Dispatch<React.SetStateAction<number>>
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  setIndex: React.Dispatch<React.SetStateAction<number>>
   setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
   setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
-  setFinished: React.Dispatch<React.SetStateAction<boolean>>
-  finished: boolean;
+  setTest: React.Dispatch<React.SetStateAction<TestText>>
+  setTotalChar: React.Dispatch<React.SetStateAction<number>>
   setPersonalBest: React.Dispatch<React.SetStateAction<number>>
   setWPM: React.Dispatch<React.SetStateAction<number>>
-  charStatus: CharStatus[]
-  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
-  index: number
-  setIndex: React.Dispatch<React.SetStateAction<number>>
-  test: TestText
-  setTest: React.Dispatch<React.SetStateAction<TestText>>
-  totalChar: number;
-  setTotalChar: React.Dispatch<React.SetStateAction<number>>
   handleRestart: () => void
 }
 
 export function TypingTest(
   {
     setAccuracy,
-    isStarted,
-    incorrectChar,
-    correctChar,
-    setCorrectChar,
+    charStatus, setCharStatus,
+    correctChar, setCorrectChar,
     setCompleted,
-    setIsStarted,
-    setIncorrectChar,
-    time,
     difficulty,
-    language,
-    timeLeft,
     setFinished,
-    setWPM,
-    charStatus,
-    setCharStatus,
+    isStarted, setIsStarted,
+    incorrectChar, setIncorrectChar,
     index, setIndex,
+    language,
+    time,
+    timeLeft,
     test, setTest,
     totalChar, setTotalChar,
+    setWPM,
     handleRestart
   }: TypingTestProps) {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -134,11 +131,11 @@ export function TypingTest(
       />
       {isStarted && (
         <RestartTest
-          label="Restart Test"
-          handleRestart={handleRestart}
           border="border-t-2 border-(--neutral-700)"
           colors=" bg-(--neutral-800) hover:bg-(--neutral-0) text-white hover:text-(--neutral-900) "
           invert="group-hover:invert "
+          label="Restart Test"
+          handleRestart={handleRestart}
         />
       )}
     </section>

@@ -1,26 +1,24 @@
-// DevNote: textColor will be added when the typing starts so for now it can stay white
-
 type TypingStatsProps = {
-  stat: number;
+  borderClass?: string;
+  isStarted?: boolean;
   statLabel: string;
-  isStarted?: boolean
+  stat: number;
+  styleClass?: string;
+  paddingAlignment?: string;
   textColor?: string;
   textAlignment?: string;
-  borderClass?: string;
-  paddingAlignment?: string;
-  styleClass?: string;
 }
 
 export function TypingStats(
   {
-    stat,
-    statLabel,
+    borderClass,
     isStarted,
+    statLabel,
+    styleClass,
+    stat,
+    paddingAlignment = "sm:pl-3",
     textColor = "text-white",
     textAlignment = "",
-    paddingAlignment = "sm:pl-3",
-    borderClass,
-    styleClass
   }: TypingStatsProps
 ) {
   return (

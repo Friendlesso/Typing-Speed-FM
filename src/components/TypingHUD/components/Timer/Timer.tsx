@@ -2,24 +2,25 @@ import { useEffect } from "react"
 import type { TimeDropdownValue } from "../../../../types/dropdown";
 
 type TimerProps = {
-  time: TimeDropdownValue
-  isStarted: boolean;
-  setFinished: React.Dispatch<React.SetStateAction<boolean>>
   finished: boolean
+  isStarted: boolean;
+  time: TimeDropdownValue
   timeLeft: number;
-  setTimeLeft: React.Dispatch<React.SetStateAction<number>>
+
   setCompleted: React.Dispatch<React.SetStateAction<number>>
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  setTimeLeft: React.Dispatch<React.SetStateAction<number>>
 }
 
 
 export function Timer({
-  time,
+  finished, setFinished,
   isStarted,
-  setFinished,
-  finished,
-  timeLeft,
-  setTimeLeft,
+  time,
+  timeLeft, setTimeLeft,
+  
   setCompleted
+
 }: TimerProps) {
 
 
@@ -28,7 +29,7 @@ export function Timer({
   const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
   useEffect(() => {
-    if(!isStarted) return;
+    if (!isStarted) return;
 
     if (typeof time === "number") {
       setTimeLeft(time);

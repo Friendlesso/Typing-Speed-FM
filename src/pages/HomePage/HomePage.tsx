@@ -4,7 +4,7 @@ import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "../../ty
 import type { CharStatus, TestText } from "../../types/TestTypes";
 
 type HomePageProps = {
-  
+
   accuracy: number;
   correctChar: number;
   charStatus: CharStatus[]
@@ -71,43 +71,35 @@ export function HomePage(
     <div className="flex flex-col flex-1 mt-16 gap-8">
       <TypingHUD
         accuracy={accuracy}
-        isStarted={isStarted}
-        setFinished={setFinished}
+        difficulty={difficulty} setDifficulty={setDifficulty}
+        finished={finished} setFinished={setFinished}
+        isStarted={isStarted} setIsStarted={setIsStarted}
+        language={language} setLanguage={setLanguage}
+        time={time} setTime={setTime}
+        timeLeft={timeLeft} setTimeLeft={setTimeLeft}
         setCompleted={setCompleted}
-        finished={finished}
         WPM={WPM}
-        time={time}
-        difficulty={difficulty}
-        language={language}
-        setTime={setTime}
-        setIsStarted={setIsStarted}
-        setDifficulty={setDifficulty}
-        setLanguage={setLanguage}
-        timeLeft={timeLeft}
-        setTimeLeft={setTimeLeft}
       />
       <TypingTest
         setAccuracy={setAccuracy}
-        isStarted={isStarted}
-        time={time}
-        language={language}
-        difficulty={difficulty}
-        timeLeft={timeLeft}
-        incorrectChar={incorrectChar}
-        correctChar={correctChar}
-        setCorrectChar={setCorrectChar}
+        correctChar={correctChar} setCorrectChar={setCorrectChar}
+        charStatus={charStatus} setCharStatus={setCharStatus}
         setCompleted={setCompleted}
-        setIsStarted={setIsStarted}
-        setIncorrectChar={setIncorrectChar}
+        difficulty={difficulty}
+        finished={finished} setFinished={setFinished}
+        isStarted={isStarted} setIsStarted={setIsStarted}
+        incorrectChar={incorrectChar} setIncorrectChar={setIncorrectChar}
+        index={index} setIndex={setIndex}
+        language={language}
+        time={time} 
+        timeLeft={timeLeft}
+        totalChar={totalChar} setTotalChar={setTotalChar}
+        test={test} setTest={setTest}
+
         setIsNewPersonalBest={setIsNewPersonalBest}
         setPersonalBest={setPersonalBest}
-        setFinished={setFinished}
-        finished={finished}
         setWPM={setWPM}
-        charStatus={charStatus} setCharStatus={setCharStatus}
-        index={index} setIndex={setIndex}
-        test={test} setTest={setTest}
-        totalChar={totalChar} setTotalChar={setTotalChar}
+
         handleRestart={handleRestart}
       />
     </div>

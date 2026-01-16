@@ -105,16 +105,16 @@ export function ResultPage({
       />
       <div className="flex sm:flex-row flex-col items-center justify-center pt-5 pb-8 gap-5">
         <TypingStats
+          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
           stat={WPM}
           statLabel="WPM"
-          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
           paddingAlignment="p-0"
           textAlignment="flex flex-col items-start gap-3"
         />
         <TypingStats
+          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
           stat={accuracy}
           statLabel="Accuracy"
-          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
           paddingAlignment=" p-0 "
           textAlignment=" flex flex-col items-start gap-3"
         />
@@ -129,7 +129,7 @@ export function ResultPage({
         colors='hover:bg-(--neutral-800) bg-(--neutral-0) hover:text-white text-(--neutral-900)'
         invert=' invert group-hover:invert-0 '
       />
-      {(!isNewPersonalBest || completed >= 1) &&(
+      {(!isNewPersonalBest || completed >= 1) && (
         <>
           <span className='absolute sm:top-2/3 sm:bottom-auto bottom-10 sm:right-7 right-5 animate-ping [animation-duration:2.5s]'>
             <img src={IconStarOne} />
