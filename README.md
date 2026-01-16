@@ -2,8 +2,8 @@
 
 ## A typing test app that tracks WPM, accuracy across multiple difficulty and time modes, with persistent user preferences.
 
-🔗Live Demo: [https://typing-speed-fm.onrender.com]
-📦Repository: [https://github.com/Friendlesso/Typing-Speed-FM]
+- 🔗Live Demo: https://typing-speed-fm.onrender.com
+- 📦Repository: https://github.com/Friendlesso/Typing-Speed-FM
 
 ## The Challenge
 
