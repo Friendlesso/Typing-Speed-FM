@@ -29,7 +29,6 @@ export function DropdownMenu<T>({
 }: DropdownMenuProps<T>) {
   return (
     <ul
-      role="Menu"
       className={`
         absolute 
         top-10 
