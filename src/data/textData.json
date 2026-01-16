@@ -1,128 +1,386 @@
 {
-  "Easy": [
-    {
-      "id": "easy-1",
-      "text": "The sun rose over the quiet town. Birds sang in the trees as people woke up and started their day. It was going to be a warm and sunny morning."
-    },
-    {
-      "id": "easy-2",
-      "text": "She walked to the store to buy some bread and milk. The shop was busy but she found what she needed quickly. On her way home, she saw a friend and waved."
-    },
-    {
-      "id": "easy-3",
-      "text": "The dog ran across the park chasing a ball. He was fast and loved to play. After a while, he got tired and lay down in the cool shade of a big oak tree."
-    },
-    {
-      "id": "easy-4",
-      "text": "I like to read books before I go to sleep. It helps me relax after a long day. My favorite stories are about adventure and travel to far away places."
-    },
-    {
-      "id": "easy-5",
-      "text": "The kitchen smelled of fresh coffee and toast. Mom was making breakfast while dad read the news. It was a normal morning in their small but cozy home."
-    },
-    {
-      "id": "easy-6",
-      "text": "We went to the beach last summer. The water was blue and the sand was warm. We built a big sand castle and looked for shells along the shore."
-    },
-    {
-      "id": "easy-7",
-      "text": "The cat sat on the window sill watching the rain. Drops fell down the glass one by one. She seemed happy to be inside where it was dry and warm."
-    },
-    {
-      "id": "easy-8",
-      "text": "My best friend lives next door to me. We play games together after school. Sometimes we ride our bikes around the block or sit and talk for hours."
-    },
-    {
-      "id": "easy-9",
-      "text": "Spring is my favorite time of year. Flowers start to bloom and the days get longer. I love to see the trees turn green again after the cold winter months."
-    },
-    {
-      "id": "easy-10",
-      "text": "The music played softly in the room. She closed her eyes and let the sounds wash over her. It was a simple song but it made her feel at peace."
-    }
-  ],
-  "Medium": [
-    {
-      "id": "medium-1",
-      "text": "Learning a new skill takes patience and consistent practice. Whether you're studying a language, picking up an instrument, or mastering a sport, the key is to show up every day. Small improvements compound over time, and before you know it, you'll have made remarkable progress."
-    },
-    {
-      "id": "medium-2",
-      "text": "The old lighthouse had stood on the cliff for over a century, guiding sailors safely through treacherous waters. Its beam cut through the fog each night, a reassuring presence for those navigating the rocky coastline. Many storms had tested its structure, but it remained steadfast."
-    },
-    {
-      "id": "medium-3",
-      "text": "Coffee culture has evolved dramatically in recent decades. What was once a simple morning ritual has become an art form, with baristas crafting intricate latte designs and roasters sourcing beans from remote mountain villages. The humble cup of coffee now tells a global story."
-    },
-    {
-      "id": "medium-4",
-      "text": "Urban gardens are transforming city landscapes around the world. Residents are converting rooftops, balconies, and abandoned lots into thriving green spaces. These initiatives not only provide fresh produce but also create communities, reduce stress, and help combat the urban heat island effect."
-    },
-    {
-      "id": "medium-5",
-      "text": "The documentary explored how technology shapes our daily habits. From the moment we wake to an alarm on our phones to the podcasts we fall asleep to, digital tools have woven themselves into the fabric of modern life. The question is: are we in control?"
-    },
-    {
-      "id": "medium-6",
-      "text": "Traveling by train offers a unique perspective on the countryside. Unlike flying, which reduces landscapes to abstract patterns, rail journeys let you witness the gradual transitions between regions. You see farms give way to forests, and small towns emerge from rolling hills."
-    },
-    {
-      "id": "medium-7",
-      "text": "The chef believed that great cooking starts with quality ingredients. She visited local farmers each week, selecting vegetables at their peak ripeness. Her menu changed with the seasons, reflecting what the land offered. Diners appreciated the freshness they could taste in every bite."
-    },
-    {
-      "id": "medium-8",
-      "text": "Libraries have reinvented themselves for the digital age. Beyond lending books, they now offer coworking spaces, 3D printers, recording studios, and coding workshops. These community hubs have become places where people of all ages come to learn, create, and connect with others."
-    },
-    {
-      "id": "medium-9",
-      "text": "The architect designed buildings that worked with nature rather than against it. Large windows captured natural light, reducing the need for electricity. Green roofs absorbed rainwater and provided insulation. Her philosophy was simple: sustainable design should be beautiful, functional, and accessible to everyone."
-    },
-    {
-      "id": "medium-10",
-      "text": "Night markets come alive after sunset in cities across Asia. Vendors set up stalls selling everything from grilled skewers to handmade crafts. The air fills with enticing aromas and the buzz of conversation. Locals and tourists alike wander through, sampling street food and hunting for bargains."
-    }
-  ],
-  "Hard": [
-    {
-      "id": "hard-1",
-      "text": "The philosopher's argument hinged on a seemingly paradoxical assertion: that absolute freedom, pursued without constraint, inevitably undermines itself. \"Consider,\" she wrote, \"how the libertarian ideal—when taken to its logical extreme—produces conditions in which the powerful dominate the weak, thereby eliminating freedom for the majority.\" Her critics dismissed this as sophistry; her supporters hailed it as profound."
-    },
-    {
-      "id": "hard-2",
-      "text": "Quantum entanglement—Einstein's \"spooky action at a distance\"—continues to perplex physicists and philosophers alike. When two particles become entangled, measuring one instantaneously affects the other, regardless of the distance separating them. This phenomenon doesn't violate relativity (no information travels faster than light), yet it challenges our intuitions about locality, causality, and the nature of reality itself."
-    },
-    {
-      "id": "hard-3",
-      "text": "The Renaissance polymath's correspondence reveals a mind of extraordinary breadth: in a single week's letters, he discussed astronomical observations, critiqued a colleague's architectural drawings, proposed improvements to the city's sewage system, and composed a sonnet for a patron's daughter. \"Specialization,\" he remarked wryly, \"is for insects.\" His contemporaries found him exhausting; posterity finds him inspirational."
-    },
-    {
-      "id": "hard-4",
-      "text": "Algorithmic trading has fundamentally restructured financial markets. High-frequency systems execute thousands of transactions per second, exploiting minute price discrepancies across exchanges. Critics argue this creates systemic fragility—the 2010 \"Flash Crash\" saw the Dow Jones plummet 1,000 points in minutes before recovering. Proponents counter that algorithms provide liquidity and reduce spreads, ultimately benefiting retail investors."
-    },
-    {
-      "id": "hard-5",
-      "text": "The biographer faced an ethical dilemma: her subject's private journals—recently discovered in an attic—contained revelations that would overturn his carefully cultivated public image. Should she publish them? \"Biography,\" she mused, \"exists in tension between truth-telling and respect for the dead.\" After months of deliberation, she chose disclosure, reasoning that sanitized history serves no one."
-    },
-    {
-      "id": "hard-6",
-      "text": "Microplastics have infiltrated virtually every ecosystem on Earth, from the Mariana Trench to Arctic ice cores. These polymer fragments—smaller than 5mm in diameter—originate from degrading consumer products, synthetic textiles, and industrial processes. Researchers have detected them in human blood, placental tissue, and breast milk; their long-term health implications remain disturbingly unclear. The ubiquity of plastic pollution represents an unprecedented experiment on planetary biology."
-    },
-    {
-      "id": "hard-7",
-      "text": "The conductor's interpretation of Mahler's Ninth Symphony emphasized its prophetic qualities—the premonition of catastrophe, the aching nostalgia for a world about to vanish. \"Mahler composed this knowing he was dying,\" she explained in the program notes, \"but he also intuited, somehow, that European civilization itself stood at the precipice.\" The orchestra's performance—hushed, trembling, transcendent—left the audience in stunned silence."
-    },
-    {
-      "id": "hard-8",
-      "text": "Constitutional scholars continue debating the \"counter-majoritarian difficulty\": how can judicial review—whereby unelected judges overturn legislation passed by democratic representatives—be reconciled with popular sovereignty? Some argue courts protect minority rights against tyrannical majorities; others contend this reasoning masks ideological preferences in neutral-sounding jurisprudence. The tension, perhaps, is irresolvable; democratic systems must balance competing values rather than optimize for any single principle."
-    },
-    {
-      "id": "hard-9",
-      "text": "The novelist's prose style—elliptical, fragmented, punctuated by abrupt temporal shifts—reflected her thematic preoccupations: memory's unreliability, identity's fluidity, the impossibility of objective narration. \"Every story,\" she declared in an interview, \"is simultaneously true and false; it reveals by concealing, illuminates by casting shadows.\" Critics accused her of obscurantism; she responded that clarity itself can be a form of deception."
-    },
-    {
-      "id": "hard-10",
-      "text": "The archaeological expedition unearthed artifacts that complicated prevailing theories about Bronze Age trade networks. Obsidian from Anatolia, lapis lazuli from Afghanistan, and amber from the Baltic—all discovered in a single Mycenaean tomb—suggested commercial connections far more extensive than previously hypothesized. \"We've underestimated ancient peoples' navigational capabilities and their appetite for luxury goods,\" the lead researcher observed. \"Globalization isn't as modern as we assume.\""
-    }
-  ]
+  "en": {
+    "Easy": [
+      {
+        "id": "easy-1",
+        "text": "The sun rose over the quiet town. Birds sang in the trees as people woke up and started their day. It was going to be a warm and sunny morning."
+      },
+      {
+        "id": "easy-2",
+        "text": "She walked to the store to buy some bread and milk. The shop was busy but she found what she needed quickly. On her way home, she saw a friend and waved."
+      },
+      {
+        "id": "easy-3",
+        "text": "The dog ran across the park chasing a ball. He was fast and loved to play. After a while, he got tired and lay down in the cool shade of a big oak tree."
+      },
+      {
+        "id": "easy-4",
+        "text": "I like to read books before I go to sleep. It helps me relax after a long day. My favorite stories are about adventure and travel to far away places."
+      },
+      {
+        "id": "easy-5",
+        "text": "The kitchen smelled of fresh coffee and toast. Mom was making breakfast while dad read the news. It was a normal morning in their small but cozy home."
+      },
+      {
+        "id": "easy-6",
+        "text": "We went to the beach last summer. The water was blue and the sand was warm. We built a big sand castle and looked for shells along the shore."
+      },
+      {
+        "id": "easy-7",
+        "text": "The cat sat on the window sill watching the rain. Drops fell down the glass one by one. She seemed happy to be inside where it was dry and warm."
+      },
+      {
+        "id": "easy-8",
+        "text": "My best friend lives next door to me. We play games together after school. Sometimes we ride our bikes around the block or sit and talk for hours."
+      },
+      {
+        "id": "easy-9",
+        "text": "Spring is my favorite time of year. Flowers start to bloom and the days get longer. I love to see the trees turn green again after the cold winter months."
+      },
+      {
+        "id": "easy-10",
+        "text": "The music played softly in the room. She closed her eyes and let the sounds wash over her. It was a simple song but it made her feel at peace."
+      }
+    ],
+    "Medium": [
+      {
+        "id": "medium-1",
+        "text": "Learning a new skill takes patience and consistent practice. Whether you're studying a language, picking up an instrument, or mastering a sport, the key is to show up every day. Small improvements compound over time, and before you know it, you'll have made remarkable progress."
+      },
+      {
+        "id": "medium-2",
+        "text": "The old lighthouse had stood on the cliff for over a century, guiding sailors safely through treacherous waters. Its beam cut through the fog each night, a reassuring presence for those navigating the rocky coastline. Many storms had tested its structure, but it remained steadfast."
+      },
+      {
+        "id": "medium-3",
+        "text": "Coffee culture has evolved dramatically in recent decades. What was once a simple morning ritual has become an art form, with baristas crafting intricate latte designs and roasters sourcing beans from remote mountain villages. The humble cup of coffee now tells a global story."
+      },
+      {
+        "id": "medium-4",
+        "text": "Urban gardens are transforming city landscapes around the world. Residents are converting rooftops, balconies, and abandoned lots into thriving green spaces. These initiatives not only provide fresh produce but also create communities, reduce stress, and help combat the urban heat island effect."
+      },
+      {
+        "id": "medium-5",
+        "text": "The documentary explored how technology shapes our daily habits. From the moment we wake to an alarm on our phones to the podcasts we fall asleep to, digital tools have woven themselves into the fabric of modern life. The question is: are we in control?"
+      },
+      {
+        "id": "medium-6",
+        "text": "Traveling by train offers a unique perspective on the countryside. Unlike flying, which reduces landscapes to abstract patterns, rail journeys let you witness the gradual transitions between regions. You see farms give way to forests, and small towns emerge from rolling hills."
+      },
+      {
+        "id": "medium-7",
+        "text": "The chef believed that great cooking starts with quality ingredients. She visited local farmers each week, selecting vegetables at their peak ripeness. Her menu changed with the seasons, reflecting what the land offered. Diners appreciated the freshness they could taste in every bite."
+      },
+      {
+        "id": "medium-8",
+        "text": "Libraries have reinvented themselves for the digital age. Beyond lending books, they now offer coworking spaces, 3D printers, recording studios, and coding workshops. These community hubs have become places where people of all ages come to learn, create, and connect with others."
+      },
+      {
+        "id": "medium-9",
+        "text": "The architect designed buildings that worked with nature rather than against it. Large windows captured natural light, reducing the need for electricity. Green roofs absorbed rainwater and provided insulation. Her philosophy was simple: sustainable design should be beautiful, functional, and accessible to everyone."
+      },
+      {
+        "id": "medium-10",
+        "text": "Night markets come alive after sunset in cities across Asia. Vendors set up stalls selling everything from grilled skewers to handmade crafts. The air fills with enticing aromas and the buzz of conversation. Locals and tourists alike wander through, sampling street food and hunting for bargains."
+      }
+    ],
+    "Hard": [
+      {
+        "id": "hard-1",
+        "text": "The philosopher's argument hinged on a seemingly paradoxical assertion: that absolute freedom, pursued without constraint, inevitably undermines itself. \"Consider,\" she wrote, \"how the libertarian ideal—when taken to its logical extreme—produces conditions in which the powerful dominate the weak, thereby eliminating freedom for the majority.\" Her critics dismissed this as sophistry; her supporters hailed it as profound."
+      },
+      {
+        "id": "hard-2",
+        "text": "Quantum entanglement—Einstein's \"spooky action at a distance\"—continues to perplex physicists and philosophers alike. When two particles become entangled, measuring one instantaneously affects the other, regardless of the distance separating them. This phenomenon doesn't violate relativity (no information travels faster than light), yet it challenges our intuitions about locality, causality, and the nature of reality itself."
+      },
+      {
+        "id": "hard-3",
+        "text": "The Renaissance polymath's correspondence reveals a mind of extraordinary breadth: in a single week's letters, he discussed astronomical observations, critiqued a colleague's architectural drawings, proposed improvements to the city's sewage system, and composed a sonnet for a patron's daughter. \"Specialization,\" he remarked wryly, \"is for insects.\" His contemporaries found him exhausting; posterity finds him inspirational."
+      },
+      {
+        "id": "hard-4",
+        "text": "Algorithmic trading has fundamentally restructured financial markets. High-frequency systems execute thousands of transactions per second, exploiting minute price discrepancies across exchanges. Critics argue this creates systemic fragility—the 2010 \"Flash Crash\" saw the Dow Jones plummet 1,000 points in minutes before recovering. Proponents counter that algorithms provide liquidity and reduce spreads, ultimately benefiting retail investors."
+      },
+      {
+        "id": "hard-5",
+        "text": "The biographer faced an ethical dilemma: her subject's private journals—recently discovered in an attic—contained revelations that would overturn his carefully cultivated public image. Should she publish them? \"Biography,\" she mused, \"exists in tension between truth-telling and respect for the dead.\" After months of deliberation, she chose disclosure, reasoning that sanitized history serves no one."
+      },
+      {
+        "id": "hard-6",
+        "text": "Microplastics have infiltrated virtually every ecosystem on Earth, from the Mariana Trench to Arctic ice cores. These polymer fragments—smaller than 5mm in diameter—originate from degrading consumer products, synthetic textiles, and industrial processes. Researchers have detected them in human blood, placental tissue, and breast milk; their long-term health implications remain disturbingly unclear. The ubiquity of plastic pollution represents an unprecedented experiment on planetary biology."
+      },
+      {
+        "id": "hard-7",
+        "text": "The conductor's interpretation of Mahler's Ninth Symphony emphasized its prophetic qualities—the premonition of catastrophe, the aching nostalgia for a world about to vanish. \"Mahler composed this knowing he was dying,\" she explained in the program notes, \"but he also intuited, somehow, that European civilization itself stood at the precipice.\" The orchestra's performance—hushed, trembling, transcendent—left the audience in stunned silence."
+      },
+      {
+        "id": "hard-8",
+        "text": "Constitutional scholars continue debating the \"counter-majoritarian difficulty\": how can judicial review—whereby unelected judges overturn legislation passed by democratic representatives—be reconciled with popular sovereignty? Some argue courts protect minority rights against tyrannical majorities; others contend this reasoning masks ideological preferences in neutral-sounding jurisprudence. The tension, perhaps, is irresolvable; democratic systems must balance competing values rather than optimize for any single principle."
+      },
+      {
+        "id": "hard-9",
+        "text": "The novelist's prose style—elliptical, fragmented, punctuated by abrupt temporal shifts—reflected her thematic preoccupations: memory's unreliability, identity's fluidity, the impossibility of objective narration. \"Every story,\" she declared in an interview, \"is simultaneously true and false; it reveals by concealing, illuminates by casting shadows.\" Critics accused her of obscurantism; she responded that clarity itself can be a form of deception."
+      },
+      {
+        "id": "hard-10",
+        "text": "The archaeological expedition unearthed artifacts that complicated prevailing theories about Bronze Age trade networks. Obsidian from Anatolia, lapis lazuli from Afghanistan, and amber from the Baltic—all discovered in a single Mycenaean tomb—suggested commercial connections far more extensive than previously hypothesized. \"We've underestimated ancient peoples' navigational capabilities and their appetite for luxury goods,\" the lead researcher observed. \"Globalization isn't as modern as we assume.\""
+      }
+    ]
+  },
+  "es": {
+    "Easy": [
+      {
+        "id": "easy-1",
+        "text": "El sol salió sobre el pueblo tranquilo. Los pájaros cantaban en los árboles mientras la gente se despertaba y comenzaba su día. Iba a ser una mañana cálida y soleada."
+      },
+      {
+        "id": "easy-2",
+        "text": "Ella caminó hacia la tienda para comprar pan y leche. La tienda estaba concurrida pero encontró lo que necesitaba rápidamente. De camino a casa, vio a un amigo y lo saludó."
+      },
+      {
+        "id": "easy-3",
+        "text": "El perro corrió por el parque persiguiendo una pelota. Era rápido y le encantaba jugar. Después de un rato, se cansó y se tumbó a la sombra fresca de un gran roble."
+      },
+      {
+        "id": "easy-4",
+        "text": "Me gusta leer libros antes de irme a dormir. Me ayuda a relajarme después de un largo día. Mis historias favoritas son sobre aventuras y viajes a lugares lejanos."
+      },
+      {
+        "id": "easy-5",
+        "text": "La cocina olía a café recién hecho y tostadas. Mamá estaba preparando el desayuno mientras papá leía las noticias. Era una mañana normal en su pequeña pero acogedora casa."
+      },
+      {
+        "id": "easy-6",
+        "text": "Fuimos a la playa el verano pasado. El agua era azul y la arena estaba caliente. Construimos un gran castillo de arena y buscamos conchas por la orilla."
+      },
+      {
+        "id": "easy-7",
+        "text": "El gato estaba sentado en el alféizar de la ventana mirando la lluvia. Las gotas caían por el cristal una a una. Parecía feliz de estar dentro, donde estaba seco y cálido."
+      },
+      {
+        "id": "easy-8",
+        "text": "Mi mejor amigo vive al lado de mi casa. Jugamos juntos después de la escuela. A veces montamos nuestras bicicletas por la manzana o nos sentamos a hablar durante horas."
+      },
+      {
+        "id": "easy-9",
+        "text": "La primavera es mi época favorita del año. Las flores empiezan a florecer y los días se alargan. Me encanta ver los árboles volverse verdes de nuevo tras los fríos meses de invierno."
+      },
+      {
+        "id": "easy-10",
+        "text": "La música sonaba suavemente en la habitación. Ella cerró los ojos y dejó que los sonidos la envolvieran. Era una canción sencilla, pero la hacía sentir en paz."
+      }
+    ],
+    "Medium": [
+      {
+        "id": "medium-1",
+        "text": "Aprender una nueva habilidad requiere paciencia y práctica constante. Ya sea que estés estudiando un idioma, aprendiendo un instrumento o dominando un deporte, la clave es presentarse cada día. Las pequeñas mejoras se acumulan con el tiempo y, antes de que te des cuenta, habrás logrado un progreso notable."
+      },
+      {
+        "id": "medium-2",
+        "text": "El viejo faro se alzaba sobre el acantilado desde hacía más de un siglo, guiando a los marineros de forma segura a través de aguas traicioneras. Su haz cortaba la niebla cada noche, una presencia tranquilizadora para quienes navegaban por la costa rocosa. Muchas tormentas habían puesto a prueba su estructura, pero se mantenía firme."
+      },
+      {
+        "id": "medium-3",
+        "text": "La cultura del café ha evolucionado drásticamente en las últimas décadas. Lo que antes era un simple ritual matutino se ha convertido en una forma de arte, con baristas creando intrincados diseños de latte y tostadores obteniendo granos de remotas aldeas de montaña. La humilde taza de café cuenta ahora una historia global."
+      },
+      {
+        "id": "medium-4",
+        "text": "Los huertos urbanos están transformando los paisajes urbanos de todo el mundo. Los residentes están convirtiendo azoteas, balcones y solares abandonados en prósperos espacios verdes. Estas iniciativas no sólo proporcionan productos frescos, sino que también crean comunidades, reducen el estrés y ayudan a combatir el efecto de isla de calor urbana."
+      },
+      {
+        "id": "medium-5",
+        "text": "El documental exploraba cómo la tecnología moldea nuestros hábitos diarios. Desde el momento en que nos despertamos con la alarma del móvil hasta los podcasts con los que nos dormimos, las herramientas digitales se han entretejido en el tejido de la vida moderna. La pregunta es: ¿tenemos nosotros el control?"
+      },
+      {
+        "id": "medium-6",
+        "text": "Viajar en tren ofrece una perspectiva única del campo. A diferencia del avión, que reduce los paisajes a patrones abstractos, los viajes en tren permiten presenciar las transiciones graduales entre regiones. Se ve cómo las granjas dan paso a los bosques y cómo los pequeños pueblos emergen de las colinas onduladas."
+      },
+      {
+        "id": "medium-7",
+        "text": "La chef creía que la gran cocina empieza con ingredientes de calidad. Visitaba a los agricultores locales cada semana, seleccionando las verduras en su punto óptimo de maduración. Su menú cambiaba con las estaciones, reflejando lo que la tierra ofrecía. Los comensales apreciaban la frescura que podían saborear en cada bocado."
+      },
+      {
+        "id": "medium-8",
+        "text": "Las bibliotecas se han reinventado para la era digital. Además de prestar libros, ahora ofrecen espacios de coworking, impresoras 3D, estudios de grabación y talleres de programación. Estos centros comunitarios se han convertido en lugares donde personas de todas las edades vienen a aprender, crear y conectar con los demás."
+      },
+      {
+        "id": "medium-9",
+        "text": "El arquitecto diseñó edificios que trabajaban con la naturaleza en lugar de contra ella. Los grandes ventanales captaban la luz natural, reduciendo la necesidad de electricidad. Los tejados verdes absorbían el agua de lluvia y proporcionaban aislamiento. Su filosofía era sencilla: el diseño sostenible debe ser bello, funcional y accesible para todos."
+      },
+      {
+        "id": "medium-10",
+        "text": "Los mercados nocturnos cobran vida tras la puesta de sol en ciudades de toda Asia. Los vendedores instalan puestos donde venden de todo, desde brochetas a la parrilla hasta artesanía hecha a mano. El aire se llena de aromas tentadores y del murmullo de la conversación. Locales y turistas pasean por allí, probando comida callejera y buscando gangas."
+      }
+    ],
+    "Hard": [
+      {
+        "id": "hard-1",
+        "text": "El argumento de la filósofa se basaba en una afirmación aparentemente paradójica: que la libertad absoluta, perseguida sin restricciones, se socava inevitablemente a sí misma. \"Consideren\", escribió, \"cómo el ideal libertario —cuando se lleva a su extremo lógico— produce condiciones en las que los poderosos dominan a los débiles, eliminando así la libertad para la mayoría\". Sus críticos lo tacharon de sofisma; sus partidarios lo calificaron de profundo."
+      },
+      {
+        "id": "hard-2",
+        "text": "El entrelazamiento cuántico —la \"acción espeluznante a distancia\" de Einstein— sigue dejando perplejos a físicos y filósofos por igual. Cuando dos partículas se entrelazan, la medición de una afecta instantáneamente a la otra, independientemente de la distancia que las separe. Este fenómeno no viola la relatividad (ninguna información viaja más rápido que la luz), pero desafía nuestra intuición sobre la localidad, la causalidad y la naturaleza misma de la realidad."
+      },
+      {
+        "id": "hard-3",
+        "text": "La correspondencia del polímata renacentista revela una mente de una amplitud extraordinaria: en las cartas de una sola semana, analizaba observaciones astronómicas, criticaba los planos arquitectónicos de un colega, proponía mejoras para el sistema de alcantarillado de la ciudad y componía un soneto para la hija de un mecenas. \"La especialización\", comentaba con ironía, \"es para los insectos\". Sus contemporáneos lo encontraban agotador; la posteridad lo encuentra inspirador."
+      },
+      {
+        "id": "hard-4",
+        "text": "La negociación algorítmica ha reestructurado fundamentalmente los mercados financieros. Los sistemas de alta frecuencia ejecutan miles de transacciones por segundo, explotando mínimas discrepancias de precios entre bolsas. Los críticos sostienen que esto crea fragilidad sistémica: el \"Flash Crash\" de 2010 vio al Dow Jones desplomarse 1.000 puntos en minutos antes de recuperarse. Los defensores replican que los algoritmos aportan liquidez y reducen los diferenciales, beneficiando en última instancia a los inversores minoristas."
+      },
+      {
+        "id": "hard-5",
+        "text": "La biógrafa se enfrentó a un dilema ético: los diarios privados de su sujeto —descubiertos recientemente en un desván— contenían revelaciones que darían un vuelco a su cuidadosamente cultivada imagen pública. ¿Debía publicarlos? \"La biografía\", reflexionó, \"existe en la tensión entre la búsqueda de la verdad y el respeto a los muertos\". Tras meses de deliberación, optó por la divulgación, razonando que una historia higienizada no sirve a nadie."
+      },
+      {
+        "id": "hard-6",
+        "text": "Los microplásticos se han infiltrado en prácticamente todos los ecosistemas de la Tierra, desde la fosa de las Marianas hasta los núcleos de hielo del Ártico. Estos fragmentos de polímero —de menos de 5 mm de diámetro— proceden de la degradación de productos de consumo, textiles sintéticos y procesos industriales. Los investigadores los han detectado en sangre humana, tejido placentario y leche materna; sus implicaciones para la salud a largo plazo siguen siendo inquietantemente inciertas. La ubicuidad de la contaminación por plásticos representa un experimento sin precedentes en la biología planetaria."
+      },
+      {
+        "id": "hard-7",
+        "text": "La interpretación de la directora de la Novena Sinfonía de Mahler enfatizó sus cualidades proféticas: la premonición de la catástrofe, la dolorosa nostalgia por un mundo a punto de desaparecer. \"Mahler compuso esto sabiendo que se moría\", explicó en las notas del programa, \"pero también intuyó, de algún modo, que la propia civilización europea estaba al borde del abismo\". La interpretación de la orquesta —silenciosa, temblorosa, trascendente— dejó al público en un silencio estupefacto."
+      },
+      {
+        "id": "hard-8",
+        "text": "Los constitucionalistas siguen debatiendo la \"dificultad contramayoritaria\": ¿cómo puede conciliarse el control judicial —por el que jueces no elegidos anulan legislación aprobada por representantes democráticos— con la soberanía popular? Algunos sostienen que los tribunales protegen los derechos de las minorías frente a mayorías tiránicas; otros afirman que este razonamiento oculta preferencias ideológicas bajo una jurisprudencia de apariencia neutral. La tensión, tal vez, es irresoluble; los sistemas democráticos deben equilibrar valores contrapuestos en lugar de optimizar un único principio."
+      },
+      {
+        "id": "hard-9",
+        "text": "El estilo de prosa de la novelista —elíptico, fragmentado, puntuado por bruscos cambios temporales— reflejaba sus preocupaciones temáticas: la falta de fiabilidad de la memoria, la fluidez de la identidad, la imposibilidad de una narración objetiva. \"Cada historia\", declaró en una entrevista, \"es simultáneamente verdadera y falsa; revela ocultando, ilumina proyectando sombras\". Los críticos la acusaron de oscurantismo; ella respondió que la claridad misma puede ser una forma de engaño."
+      },
+      {
+        "id": "hard-10",
+        "text": "La expedición arqueológica desenterró artefactos que complicaron las teorías predominantes sobre las redes comerciales de la Edad del Bronce. Obsidiana de Anatolia, lapislázuli de Afganistán y ámbar del Báltico —todos descubiertos en una única tumba micénica— sugerían conexiones comerciales mucho más extensas de lo que se había hipotetizado anteriormente. \"Hemos subestimado la capacidad de navegación de los pueblos antiguos y su apetito por los artículos de lujo\", observó el investigador principal. \"La globalización no es tan moderna como suponemos\"."
+      }
+    ]
+  },
+  "fr": {
+    "Easy": [
+      {
+        "id": "easy-1",
+        "text": "Le soleil se levait sur la ville tranquille. Les oiseaux chantaient dans les arbres alors que les gens se réveillaient et commençaient leur journée. Ce serait une matinée chaude et ensoleillée."
+      },
+      {
+        "id": "easy-2",
+        "text": "Elle est allée au magasin pour acheter du pain et du lait. Le magasin était animé, mais elle a trouvé ce dont elle avait besoin rapidement. En rentrant chez elle, elle a vu un ami et lui a fait signe."
+      },
+      {
+        "id": "easy-3",
+        "text": "Le chien a couru dans le parc en poursuivant une balle. Il était rapide et adorait jouer. Au bout d'un moment, il s'est fatigué et s'est couché à l'ombre fraîche d'un grand chêne."
+      },
+      {
+        "id": "easy-4",
+        "text": "J'aime lire des livres avant de m'endormir. Cela m'aide à me détendre après une longue journée. Mes histoires préférées parlent d'aventures et de voyages dans des contrées lointaines."
+      },
+      {
+        "id": "easy-5",
+        "text": "La cuisine sentait le café frais et le pain grillé. Maman préparait le petit-déjeuner pendant que papa lisait les nouvelles. C'était un matin normal dans leur petite mais confortable maison."
+      },
+      {
+        "id": "easy-6",
+        "text": "Nous sommes allés à la plage l'été dernier. L'eau était bleue et le sable était chaud. Nous avons construit un grand château de sable et cherché des coquillages le long du rivage."
+      },
+      {
+        "id": "easy-7",
+        "text": "Le chat était assis sur le rebord de la fenêtre et regardait la pluie. Les gouttes tombaient sur la vitre une à une. Elle semblait heureuse d'être à l'intérieur, là où il faisait sec et chaud."
+      },
+      {
+        "id": "easy-8",
+        "text": "Mon meilleur ami habite à côté de chez moi. Nous jouons ensemble après l'école. Parfois, nous faisons du vélo dans le quartier ou nous restons assis à discuter pendant des heures."
+      },
+      {
+        "id": "easy-9",
+        "text": "Le printemps est ma saison préférée de l'année. Les fleurs commencent à éclore et les jours s'allongent. J'aime voir les arbres redevenir verts après les froids mois d'hiver."
+      },
+      {
+        "id": "easy-10",
+        "text": "La musique jouait doucement dans la pièce. Elle a fermé les yeux et a laissé les sons l'envahir. C'était une chanson simple, mais elle lui apportait la paix."
+      }
+    ],
+    "Medium": [
+      {
+        "id": "medium-1",
+        "text": "Apprendre une nouvelle compétence demande de la patience et une pratique constante. Que vous étudiiez une langue, appreniez un instrument ou maîtrisiez un sport, la clé est d'être présent chaque jour. Les petites améliorations se cumulent avec le temps et, avant même de vous en rendre compte, vous aurez fait des progrès remarquables."
+      },
+      {
+        "id": "medium-2",
+        "text": "Le vieux phare se dressait sur la falaise depuis plus d'un siècle, guidant les marins en toute sécurité à travers des eaux traîtresses. Son faisceau perçait le brouillard chaque nuit, une présence rassurante pour ceux qui naviguaient le long de la côte rocheuse. De nombreuses tempêtes avaient mis sa structure à l'épreuve, mais il restait inébranlable."
+      },
+      {
+        "id": "medium-3",
+        "text": "La culture du café a évolué de manière spectaculaire au cours des dernières décennies. Ce qui était autrefois un simple rituel matinal est devenu une forme d'art, avec des baristas créant des motifs complexes sur les lattes et des torréfacteurs s'approvisionnant en grains dans des villages de montagne reculés. L'humble tasse de café raconte désormais une histoire mondiale."
+      },
+      {
+        "id": "medium-4",
+        "text": "Les jardins urbains transforment les paysages citadins du monde entier. Les habitants convertissent les toits, les balcons et les terrains abandonnés en espaces verts florissants. Ces initiatives fournissent non seulement des produits frais, mais créent aussi des communautés, réduisent le stress et aident à lutter contre l'effet d'îlot de chaleur urbain."
+      },
+      {
+        "id": "medium-5",
+        "text": "Le documentaire a exploré comment la technologie façonne nos habitudes quotidiennes. Du moment où nous nous réveillons avec l'alarme de notre téléphone jusqu'aux podcasts avec lesquels nous nous endormons, les outils numériques se sont tissés dans la trame de la vie moderne. La question est : avons-nous le contrôle ?"
+      },
+      {
+        "id": "medium-6",
+        "text": "Voyager en train offre une perspective unique sur la campagne. Contrairement à l'avion, qui réduit les paysages à des motifs abstraits, les voyages ferroviaires permettent d'observer les transitions graduelles entre les régions. On voit les fermes céder la place aux forêts, et les petites villes émerger des collines vallonnées."
+      },
+      {
+        "id": "medium-7",
+        "text": "Le chef pensait qu'une excellente cuisine commence par des ingrédients de qualité. Elle rendait visite aux agriculteurs locaux chaque semaine, sélectionnant les légumes à leur apogée de maturité. Son menu changeait selon les saisons, reflétant ce que la terre offrait. Les convives appréciaient la fraîcheur qu'ils pouvaient goûter à chaque bouchée."
+      },
+      {
+        "id": "medium-8",
+        "text": "Les bibliothèques se sont réinventées pour l'ère numérique. Au-delà du prêt de livres, elles proposent désormais des espaces de coworking, des imprimantes 3D, des studios d'enregistrement et des ateliers de codage. Ces pôles communautaires sont devenus des lieux où des personnes de tous âges viennent apprendre, créer et tisser des liens."
+      },
+      {
+        "id": "medium-9",
+        "text": "L'architecte a conçu des bâtiments qui travaillent avec la nature plutôt que contre elle. De grandes fenêtres captent la lumière naturelle, réduisant ainsi les besoins en électricité. Les toits végétalisés absorbent l'eau de pluie et assurent l'isolation. Sa philosophie était simple : le design durable doit être beau, fonctionnel et accessible à tous."
+      },
+      {
+        "id": "medium-10",
+        "text": "Les marchés nocturnes s'animent après le coucher du soleil dans les villes d'Asie. Les vendeurs installent des stands vendant de tout, des brochettes grillées aux objets artisanaux faits main. L'air se remplit d'arômes alléchants et du brouhaha des conversations. Locaux et touristes s'y promènent, goûtant à la cuisine de rue et cherchant des bonnes affaires."
+      }
+    ],
+    "Hard": [
+      {
+        "id": "hard-1",
+        "text": "L'argument de la philosophe reposait sur une affirmation apparemment paradoxale : que la liberté absolue, poursuivie sans contrainte, finit inévitablement par se saborder elle-même. « Considérez », écrit-elle, « comment l'idéal libertaire — poussé à son extrême logique — produit des conditions dans lesquelles les puissants dominent les faibles, éliminant ainsi la liberté pour la majorité. » Ses détracteurs y ont vu un sophisme ; ses partisans l'ont salué comme une pensée profonde."
+      },
+      {
+        "id": "hard-2",
+        "text": "L'intrication quantique — l'« action effrayante à distance » d'Einstein — continue de laisser perplexes les physiciens comme les philosophes. Lorsque deux particules s'entremêlent, la mesure de l'une affecte instantanément l'autre, quelle que soit la distance qui les sépare. Ce phénomène ne viole pas la relativité (aucune information ne voyage plus vite que la lumière), mais il défie nos intuitions sur la localité, la causalité et la nature même de la réalité."
+      },
+      {
+        "id": "hard-3",
+        "text": "La correspondance du polymathe de la Renaissance révèle un esprit d'une ampleur extraordinaire : dans les lettres d'une seule semaine, il discutait d'observations astronomiques, critiquait les plans architecturaux d'un collègue, proposait des améliorations au système d'égouts de la ville et composait un sonnet pour la fille d'un mécène. « La spécialisation », remarquait-il avec ironie, « est pour les insectes. » Ses contemporains le trouvaient épuisant ; la postérité le trouve inspirant."
+      },
+      {
+        "id": "hard-4",
+        "text": "Le trading algorithmique a fondamentalement restructuré les marchés financiers. Des systèmes à haute fréquence exécutent des milliers de transactions par seconde, exploitant d'infimes écarts de prix entre les bourses. Les critiques soutiennent que cela crée une fragilité systémique — le « Flash Crash » de 2010 a vu le Dow Jones chuter de 1 000 points en quelques minutes avant de se redresser. Les partisans répliquent que les algorithmes fournissent de la liquidité et réduisent les écarts, bénéficiant finalement aux investisseurs particuliers."
+      },
+      {
+        "id": "hard-5",
+        "text": "La biographe était confrontée à un dilemme éthique : les journaux intimes de son sujet — récemment découverts dans un grenier — contenaient des révélations qui allaient bouleverser son image publique soigneusement cultivée. Devait-elle les publier ? « La biographie », songeait-elle, « existe dans une tension entre la recherche de la vérité et le respect des morts. » Après des mois de délibération, elle a choisi la divulgation, estimant qu'une histoire aseptisée ne sert personne."
+      },
+      {
+        "id": "hard-6",
+        "text": "Les microplastiques ont infiltré pratiquement tous les écosystèmes de la Terre, de la fosse des Mariannes aux carottes de glace de l'Arctique. Ces fragments de polymères — de moins de 5 mm de diamètre — proviennent de la dégradation de produits de consommation, de textiles synthétiques et de processus industriels. Des chercheurs les ont détectés dans le sang humain, le tissu placentaire et le lait maternel ; leurs implications à long terme pour la santé restent inquiétantes et floues. L'ubiquité de la pollution plastique représente une expérience sans précédent sur la biologie planétaire."
+      },
+      {
+        "id": "hard-7",
+        "text": "L'interprétation de la chef d'orchestre de la Neuvième Symphonie de Mahler a souligné ses qualités prophétiques — le pressentiment de la catastrophe, la nostalgie poignante d'un monde sur le point de disparaître. « Mahler a composé cela en se sachant mourant », explique-t-elle dans les notes de programme, « mais il a aussi pressenti, d'une manière ou d'une autre, que la civilisation européenne elle-même se trouvait au bord du précipice. » La performance de l'orchestre — feutrée, tremblante, transcendante — a laissé le public dans un silence stupéfait."
+      },
+      {
+        "id": "hard-8",
+        "text": "Les constitutionnalistes continuent de débattre de la « difficulté contre-majoritaire » : comment le contrôle judiciaire — par lequel des juges non élus annulent une législation votée par des représentants démocratiques — peut-il être concilié avec la souveraineté populaire ? Certains affirment que les tribunaux protègent les droits des minorités contre les majorités tyranniques ; d'autres soutiennent que ce raisonnement masque des préférences idéologiques sous une jurisprudence aux apparences neutres. La tension est peut-être insoluble ; les systèmes démocratiques doivent équilibrer des valeurs concurrentes plutôt que d'optimiser un seul principe."
+      },
+      {
+        "id": "hard-9",
+        "text": "Le style de prose de la romancière — elliptique, fragmenté, ponctué de brusques décalages temporels — reflétait ses préoccupations thématiques : le manque de fiabilité de la mémoire, la fluidité de l'identité, l'impossibilité d'une narration objective. « Chaque histoire », a-t-elle déclaré dans une interview, « est simultanément vraie et fausse ; elle révèle en dissimulant, illumine en projetant des ombres. » Les critiques l'ont accusée d'obscurantisme ; elle a répondu que la clarté elle-même peut être une forme de tromperie."
+      },
+      {
+        "id": "hard-10",
+        "text": "L'expédition archéologique a mis au jour des artefacts qui ont compliqué les théories dominantes sur les réseaux commerciaux de l'âge du bronze. L'obsidienne d'Anatolie, le lapis-lazuli d'Afghanistan et l'ambre de la Baltique — tous découverts dans une seule tombe mycénienne — suggèrent des liens commerciaux bien plus étendus qu'on ne le supposait auparavant. « Nous avons sous-estimé les capacités de navigation des peuples anciens et leur appétit pour les produits de luxe », a observé le chercheur principal. « La mondialisation n'est pas aussi moderne qu'on le croit. »"
+      }
+    ]
+  }
 }
