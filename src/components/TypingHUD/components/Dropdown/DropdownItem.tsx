@@ -56,13 +56,14 @@ export function DropdownItem<T>({
         onClick={() => {
           if (langStyle) {
             setButtonLabel('');
+            localStorage.setItem(localStorageKey, String(value))
           } else {
             setButtonLabel(label);
+            localStorage.setItem(localStorageKey, String(label));
           }
           selectedSetting(value)
           setOpen(false);
           setIsStarted(false);
-          localStorage.setItem(localStorageKey, String(label));
         }}
       >
         {label}

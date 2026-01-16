@@ -1,8 +1,8 @@
 import data from '../data/textData.json';
+import type { DifficultyValue, LanguageValue } from '../types/dropdown';
 import type { TestText } from '../types/TestTypes';
 
-export function getRandomTest(difficulty: keyof typeof data): TestText {
-  const items = data[difficulty];
-  const index = Math.floor(Math.random() * items.length);
-  return items[index]
+export function getRandomTest(language: LanguageValue,difficulty: DifficultyValue): TestText {
+  const texts = data[language][difficulty];
+  return texts[Math.floor(Math.random() * texts.length)]
 }

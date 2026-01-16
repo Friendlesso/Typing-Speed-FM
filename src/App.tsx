@@ -37,6 +37,9 @@ function App() {
   const [timeLeft, setTimeLeft] = useState<number>(() =>
     typeof time === "number" ? time : 0
   )
+  console.log(language)
+  console.log(difficulty)
+  localStorage.clear();
 
   useEffect(() => {
     localStorage.setItem("Comp", String(completed))

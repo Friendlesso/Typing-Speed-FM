@@ -6,7 +6,7 @@ import { StartTestBtn } from "./components/StartTestBtn";
 import { RestartTest } from "./components/RestartTest";
 import { getAccuracy } from "../../utils/getAccuracy";
 import { getWPM } from "../../utils/getWPM";
-import type { DifficultyValue, TimeDropdownValue } from "../../types/dropdown";
+import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "../../types/dropdown";
 
 type TypingTestProps = {
   setAccuracy: React.Dispatch<React.SetStateAction<number>>
@@ -15,6 +15,7 @@ type TypingTestProps = {
   correctChar: number;
   time: TimeDropdownValue;
   difficulty: DifficultyValue;
+  language: LanguageValue
   timeLeft: number;
   setCorrectChar: React.Dispatch<React.SetStateAction<number>>
   setCompleted: React.Dispatch<React.SetStateAction<number>>
@@ -39,6 +40,7 @@ export function TypingTest(
     setIncorrectChar,
     time,
     difficulty,
+    language,
     timeLeft,
     setFinished,
     setWPM
@@ -46,7 +48,7 @@ export function TypingTest(
   const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
   const [index, setIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null)
-  const [test, setTest] = useState<TestText>(getRandomTest(difficulty));
+  const [test, setTest] = useState<TestText>(getRandomTest(language,difficulty));
   const [totalChar, setTotalChar] = useState(0);
 
   const characters = test?.text.split("");
@@ -56,8 +58,8 @@ export function TypingTest(
   })
 
   useEffect(() => {
-    setTest(getRandomTest(difficulty))
-  }, [difficulty])
+    setTest(getRandomTest(language,difficulty))
+  }, [difficulty, language])
 
   // Function to Handle restarting the test
   const handleTestRestart = () => {
@@ -67,7 +69,7 @@ export function TypingTest(
     setIndex(0);
     setIsStarted(false);
     setTotalChar(0);
-    setTest(getRandomTest(difficulty))
+    setTest(getRandomTest(language,difficulty))
   }
 
   // Function to handleKeyDown for Typing
