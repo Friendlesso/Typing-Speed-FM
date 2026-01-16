@@ -36,9 +36,11 @@ export function TypingHUD(
   return (
     <section
       className={`
-        flex justify-between
+        flex lg:flex-row flex-col
+        justify-between
+        items-center
         border-b-2 border-(--neutral-700)
-        pb-4
+        pb-4 gap-4 lg:gap-0
       `}
     >
       <div className="flex items-center">
@@ -66,7 +68,13 @@ export function TypingHUD(
           setCompleted={setCompleted}
         />
       </div>
-      <div className='flex items-center'>
+      <div 
+        className={`
+          flex 
+          items-center 
+          sm:justify-end  justify-center
+          sm:w-fit w-full
+        `}>
         <DropdownButton
           items={difficultyItems}
           settingLabel="Difficulty"

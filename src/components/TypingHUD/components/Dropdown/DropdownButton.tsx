@@ -40,18 +40,22 @@ export function DropdownButton<T>({
   }, [])
 
   return (
-    <div ref={wrapperRef} className="relative flex items-center gap-2">
+    <div ref={wrapperRef} className="relative flex items-center gap-2 w-full">
       {settingLabel &&
         <span
-          className="text-(--neutral-400) leading-[120%] -tracking-(0.3rem) pl-1.5"
+          className="text-(--neutral-400) leading-[120%] -tracking-(0.3rem) pl-1.5 sm:block hidden"
         >
           {settingLabel}:
         </span>
       }
-      <div className="relative">
+      <div className="relative w-full">
         <button
           className={`
           flex 
+          items-center
+          justify-center
+          sm:w-40
+          w-[95%]
           gap-2.5 py-1.5 px-2.5
           border border-(--neutral-500) hover:border-(--blue-400)
           rounded-lg
