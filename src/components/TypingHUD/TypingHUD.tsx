@@ -62,7 +62,7 @@ export function TypingHUD(
           textColor="text-white"
         />
         <TypingStats
-          borderClass="border-r-2 sm:px-3 px-5"
+          borderClass="border-r-2 sm:px-3 px-5 sm:w-fit w-[33%]"
           stat={accuracy}
           isStarted={isStarted}
           statLabel="Accuracy"

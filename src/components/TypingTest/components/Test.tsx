@@ -47,7 +47,7 @@ export function Test(
           }
         `}
     >
-      <p className="text-white sm:text-[2.5rem] text-2xl leading-[136%] -tracking-[0.4px]">
+      <p className="text-white lg:text-[2.5rem] text-2xl leading-[136%] -tracking-[0.4px]">
         {characters?.map((char, charIndex) => {
           const status = charStatus[charIndex];
           let className = getCharClass(charIndex);
