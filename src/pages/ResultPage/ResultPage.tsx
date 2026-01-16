@@ -132,10 +132,10 @@ export function ResultPage({
       {(!isNewPersonalBest || completed >= 1) && (
         <>
           <span className='absolute sm:top-2/3 sm:bottom-auto bottom-10 sm:right-7 right-5 animate-ping [animation-duration:2.5s]'>
-            <img src={IconStarOne} />
+            <img src={IconStarOne} alt="start icon" />
           </span>
           <span className='absolute sm:top-20 top-5 sm:left-7 left-5 animate-ping [animation-duration:2.5s]'>
-            <img src={IconStarTwo} />
+            <img src={IconStarTwo} alt="start icon" />
           </span>
         </>
 
