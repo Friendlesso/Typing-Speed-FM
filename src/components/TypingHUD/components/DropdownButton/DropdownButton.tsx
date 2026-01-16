@@ -79,6 +79,7 @@ export function DropdownButton<T>({
         >
           {!langStyle && buttonLabel}
           <img
+            alt="Dropdown icon"
             src={buttonIcon}
           />
         </button>
