@@ -28,24 +28,41 @@ export function Timer({
   const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
   useEffect(() => {
-    if (!isStarted || typeof time !== "number") return;
+    if (typeof time === "number") {
+      setTimeLeft(time);
+    } else {
+      setTimeLeft(0);
+    }
+  }, [time, setTimeLeft])
 
-    setTimeout(() => setTimeLeft(time), 0)
+  useEffect(() => {
+    if (!isStarted) return;
 
-    const intervalId = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(intervalId)
-          setTimeout(() => setFinished(true), 0)
-          setCompleted(prev => prev + 1)
-        }
-        if (finished) {
-          clearInterval(intervalId);
-          setTimeout(() => setFinished(false), 0)
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    let intervalId: number;
+
+    if (time === "Passage") {
+      intervalId = window.setInterval(() => {
+        setTimeLeft(prev => prev + 1);
+      }, 1000);
+    } else if (typeof time === "number") {
+      intervalId = window.setInterval(() => {
+        setTimeLeft(prev => {
+          if (prev <= 1) {
+            clearInterval(intervalId)
+            setFinished(true)
+            setCompleted(prev => prev + 1);
+            return 0;
+          }
+          if (finished) {
+            clearInterval(intervalId)
+            setFinished(true)
+            setCompleted(prev => prev + 1);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000)
+    }
 
     return () => clearInterval(intervalId);
   }, [isStarted, time, setFinished, setTimeLeft, finished, setCompleted])

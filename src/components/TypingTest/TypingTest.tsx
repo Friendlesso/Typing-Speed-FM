@@ -52,13 +52,13 @@ export function TypingTest(
   const characters = test?.text.split("");
 
   useEffect(() => {
-      inputRef.current?.focus();
+    inputRef.current?.focus();
   })
 
   useEffect(() => {
     setTest(getRandomTest(difficulty))
   }, [difficulty])
-  
+
   // Function to Handle restarting the test
   const handleTestRestart = () => {
     setCorrectChar(0);
@@ -107,8 +107,10 @@ export function TypingTest(
 
 
   useEffect(() => {
-    const currentWPM = getWPM(totalChar, incorrectChar, Number(time), timeLeft);
+
+    const currentWPM = getWPM(totalChar, incorrectChar, time, timeLeft);
     setWPM(currentWPM);
+
   }, [totalChar, incorrectChar, time, timeLeft, setWPM])
 
 

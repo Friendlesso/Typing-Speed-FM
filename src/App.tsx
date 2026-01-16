@@ -23,7 +23,14 @@ function App() {
   const [personalBest, setPersonalBest] = useState(() => {
     return Number(localStorage.getItem("PB") || 0)
   })
-  const [time, setTime] = useState<TimeDropdownValue>(60)
+const [time, setTime] = useState<TimeDropdownValue>(() => {
+  const saved = localStorage.getItem("time");
+  if (saved === "Passage") return "Passage";
+  if (saved === "15" || saved === "30" || saved === "60" || saved === "120") {
+    return Number(saved) as TimeDropdownValue;
+  }
+  return 60; // default
+});
   const [timeLeft, setTimeLeft] = useState<number>(() =>
     typeof time === "number" ? time : 0
   )
@@ -31,7 +38,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem("Comp", String(completed))
   }, [completed])
-  
+
+  useEffect(() => {
+    localStorage.setItem("time", String(time))
+  }, [time])
+
   useEffect(() => {
     if (finished) {
       const prevPB = Number(localStorage.getItem("PB") || 0);
