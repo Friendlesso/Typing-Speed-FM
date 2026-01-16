@@ -8,7 +8,7 @@ export function TotalCharStat({
   incorrectChar,
 }: TotalCharStatProps) {
   return (
-    <div className={`flex flex-col gap-3 border border-(--neutral-700) px-6 py-4 rounded-lg w-40`}>
+    <div className={`flex flex-col gap-3 border border-(--neutral-700) px-6 py-4 rounded-lg sm:w-40 w-full`}>
       <p className={`text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem]`}>
         Characters:
       </p>

@@ -7,13 +7,15 @@ type DropdownMenuProps<T> = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
-  localStorageKey:string
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
+  localStorageKey: string
 }
 
 export function DropdownMenu<T>({
   items,
   isOpen,
   setOpen,
+  setIsStarted,
   setButtonLabel,
   selectedSetting,
   localStorageKey,
@@ -30,19 +32,20 @@ export function DropdownMenu<T>({
         rounded-lg
         transition-[max-height, opacity] duration-300 ease-in-out
         overflow-hidden
-        ${isOpen 
+        ${isOpen
           ? 'max-h-90 opacity-100  pointer-events-auto'
           : 'max-h-0 opacity-0 pointer-events-none'
         }
       `}
     >
-      {items.map(item => 
-        <DropdownItem 
+      {items.map(item =>
+        <DropdownItem
           key={String(item.value)}
           label={item.label}
           value={item.value}
           setOpen={setOpen}
           setButtonLabel={setButtonLabel}
+          setIsStarted={setIsStarted}
           selectedSetting={selectedSetting}
           localStorageKey={localStorageKey}
         />

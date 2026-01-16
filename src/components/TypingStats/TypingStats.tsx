@@ -5,9 +5,10 @@ type TypingStatsProps = {
   statLabel: string;
   isStarted?: boolean
   textColor?: string;
-  textAligment?: string;
+  textAlignment?: string;
   borderClass?: string;
-  paddingAligment?: string;
+  paddingAlignment?: string;
+  styleClass?: string;
 }
 
 export function TypingStats(
@@ -15,25 +16,25 @@ export function TypingStats(
     stat,
     statLabel,
     isStarted,
-    textColor,
-    textAligment,
-    paddingAligment,
+    textColor = "text-white",
+    textAlignment = "",
+    paddingAlignment = "sm:pl-3",
     borderClass,
+    styleClass
   }: TypingStatsProps
 ) {
   return (
-    <div className={`${borderClass} border-(--neutral-700) sm:w-fit w-[33%]`}>
+    <div className={`${borderClass} border-(--neutral-700)`}>
       <p
         className={`
           text-(--neutral-400) 
           sm:text-xl/[120%] -tracking-[0.0375rem] 
-          flex sm:flex-row flex-col 
-          sm:items-center items-center 
-          ${textAligment ? `${textAligment}` : ""}
+          ${styleClass}
+          ${textAlignment}
         `}
       >
         {statLabel}:
-        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold ${paddingAligment ? `${paddingAligment}` : 'sm:pl-3'} `}>
+        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold ${paddingAlignment} `}>
           {stat} {statLabel === "Accuracy" && '%'}
         </span>
       </p>

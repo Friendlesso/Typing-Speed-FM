@@ -9,6 +9,7 @@ type DropdownButtonProps<T> = {
   localStorageKey: string
   buttonIcon: string
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function DropdownButton<T>({
@@ -17,7 +18,8 @@ export function DropdownButton<T>({
   selectedSetting,
   defaultLabel,
   localStorageKey,
-  buttonIcon
+  buttonIcon,
+  setIsStarted
 }: DropdownButtonProps<T>) {
 
   const stored = localStorage.getItem(localStorageKey)
@@ -79,6 +81,7 @@ export function DropdownButton<T>({
           setOpen={setOpen}
           selectedSetting={selectedSetting}
           setButtonLabel={setButtonLabel}
+          setIsStarted={setIsStarted}
           localStorageKey={localStorageKey}
         />
       </div>

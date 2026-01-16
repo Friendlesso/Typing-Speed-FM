@@ -55,7 +55,7 @@ export function ResultPage({
   }
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-8 mt-12">
       <ResultIcon 
         icon={icon}
         animationCircle={animationCircle}
@@ -66,20 +66,20 @@ export function ResultPage({
         label={label}
         quote={quote}
       />
-      <div className="flex items-center justify-center pt-5 pb-8 gap-5">
+      <div className="flex sm:flex-row flex-col items-center justify-center pt-5 pb-8 gap-5">
         <TypingStats
           stat={WPM}
           statLabel="WPM"
-          borderClass="border px-6 py-4 rounded-lg w-40"
-          paddingAligment="p-0"
-          textAligment="flex flex-col items-start gap-3"
+          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
+          paddingAlignment="p-0"
+          textAlignment="flex flex-col items-start gap-3"
         />
         <TypingStats
           stat={accuracy}
           statLabel="Accuracy"
-          borderClass="border px-6 py-4 rounded-lg w-40"
-          paddingAligment=" p-0 "
-          textAligment=" flex flex-col items-start gap-3"
+          borderClass="border px-6 py-4 rounded-lg sm:w-40 w-full "
+          paddingAlignment=" p-0 "
+          textAlignment=" flex flex-col items-start gap-3"
         />
         <TotalCharStat
           correctChar={correctChar}

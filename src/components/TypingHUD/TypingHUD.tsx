@@ -13,6 +13,7 @@ type TypingHUDProps = {
   setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>
   setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>
   timeLeft: number;
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
   setCompleted: React.Dispatch<React.SetStateAction<number>>
   WPM: number;
@@ -28,6 +29,7 @@ export function TypingHUD(
     setTime,
     setDifficulty,
     timeLeft,
+    setIsStarted,
     setTimeLeft,
     setCompleted,
     WPM,
@@ -49,7 +51,8 @@ export function TypingHUD(
           statLabel="WPM"
           isStarted={isStarted}
           textColor="text-white"
-          borderClass="border-r-2 sm:px-3 px-5"
+          borderClass="border-r-2 sm:px-3 px-5 sm:w-fit w-[33%]"
+          styleClass=" flex sm:flex-row flex-col sm:items-center items-start "
         />
         <TypingStats
           stat={accuracy}
@@ -57,6 +60,7 @@ export function TypingHUD(
           isStarted={isStarted}
           textColor="text-(--red-500)"
           borderClass="border-r-2 sm:px-3 px-5"
+          styleClass=" flex sm:flex-row flex-col sm:items-center items-start "
         />
         <Timer
           time={time}
@@ -68,7 +72,7 @@ export function TypingHUD(
           setCompleted={setCompleted}
         />
       </div>
-      <div 
+      <div
         className={`
           flex 
           items-center 
@@ -82,6 +86,7 @@ export function TypingHUD(
           localStorageKey="diff"
           buttonIcon={IconDropDown}
           selectedSetting={setDifficulty}
+          setIsStarted={setIsStarted}
         />
         <DropdownButton
           items={TimeItems}
@@ -90,6 +95,7 @@ export function TypingHUD(
           localStorageKey="time"
           buttonIcon={IconDropDown}
           selectedSetting={setTime}
+          setIsStarted={setIsStarted}
         />
       </div>
     </section>

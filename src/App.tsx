@@ -63,7 +63,6 @@ const [time, setTime] = useState<TimeDropdownValue>(() => {
       <Header
         personalBest={personalBest}
       />
-      {/* Change this later for ? : */}
       {!finished && (
         <HomePage
           accuracy={accuracy}

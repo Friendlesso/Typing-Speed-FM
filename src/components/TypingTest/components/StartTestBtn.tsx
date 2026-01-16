@@ -16,6 +16,7 @@ export function StartTestBtn(
           absolute
           text-white
           flex flex-col items-center
+          w-full
           top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
           gap-5
           ${isStarted

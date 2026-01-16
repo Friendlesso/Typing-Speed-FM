@@ -3,8 +3,9 @@ type DropdownItemCompProps<T> = {
   value: T;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
-  localStorageKey: string;
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
+  localStorageKey: string;
 }
 
 export function DropdownItem<T>({
@@ -12,6 +13,7 @@ export function DropdownItem<T>({
   value,
   setOpen,
   setButtonLabel,
+  setIsStarted,
   localStorageKey,
   selectedSetting
 }: DropdownItemCompProps<T>) {
@@ -23,6 +25,7 @@ export function DropdownItem<T>({
           setButtonLabel(label);
           selectedSetting(value)
           setOpen(false);
+          setIsStarted(false);
           localStorage.setItem(localStorageKey, String(label));
         }}
       >
