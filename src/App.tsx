@@ -18,13 +18,12 @@ function App() {
   const [WPM, setWPM] = useState(0);
 
   // Test flow
-  const [finished, setFinished] = useState(true);
+  const [finished, setFinished] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   const [isNewPersonalBest, setIsNewPersonalBest] = useState(false);
   const [completed, setCompleted] = useState(() => {
     return Number(localStorage.getItem("Comp") || 0)
   })
-
   // User preferences
   const [difficulty, setDifficulty] = useState<DifficultyValue>(
     (localStorage.getItem("diff") as DifficultyValue) || "Easy"
@@ -80,12 +79,12 @@ function App() {
   const handleTestRestart = () => {
     setCorrectChar(0);
     setCharStatus([]);
+    setFinished(false);
     setIndex(0);
     setIncorrectChar(0);
     setIsStarted(false);
     setTotalChar(0);
     setTest(getRandomTest(language, difficulty));
-    setFinished(false);
   }
 
 
@@ -96,33 +95,25 @@ function App() {
       />
       {!finished && (
         <HomePage
-          accuracy={accuracy}
-          setAccuracy={setAccuracy}
-          correctChar={correctChar}
-          setCompleted={setCompleted}
-          setCorrectChar={setCorrectChar}
-          setFinished={setFinished}
-          finished={finished}
-          setIncorrectChar={setIncorrectChar}
-          incorrectChar={incorrectChar}
-          setWPM={setWPM}
-          isStarted={isStarted}
-          setIsStarted={setIsStarted}
-          setPersonalBest={setPersonalBest}
-          setIsNewPersonalBest={setIsNewPersonalBest}
-          time={time}
-          setTime={setTime}
-          language={language}
-          setLanguage={setLanguage}
-          timeLeft={timeLeft}
-          setTimeLeft={setTimeLeft}
-          difficulty={difficulty}
-          setDifficulty={setDifficulty}
-          WPM={WPM}
+          accuracy={accuracy} setAccuracy={setAccuracy}
+          correctChar={correctChar} setCorrectChar={setCorrectChar}
           charStatus={charStatus} setCharStatus={setCharStatus}
+          setCompleted={setCompleted}
+          difficulty={difficulty} setDifficulty={setDifficulty}
+          finished={finished} setFinished={setFinished}
+          incorrectChar={incorrectChar} setIncorrectChar={setIncorrectChar}
+          isStarted={isStarted} setIsStarted={setIsStarted}
           index={index} setIndex={setIndex}
+          language={language} setLanguage={setLanguage}
+          time={time} setTime={setTime}
+          timeLeft={timeLeft} setTimeLeft={setTimeLeft}
           test={test} setTest={setTest}
           totalChar={totalChar} setTotalChar={setTotalChar}
+
+          setPersonalBest={setPersonalBest}
+          setIsNewPersonalBest={setIsNewPersonalBest}
+          WPM={WPM} setWPM={setWPM}
+
           handleRestart={handleTestRestart}
         />
       )
@@ -133,9 +124,9 @@ function App() {
           correctChar={correctChar}
           completed={completed}
           incorrectChar={incorrectChar}
-          isNewPersonalBest={isNewPersonalBest}
           setFinished={setFinished}
           setIsStarted={setIsStarted}
+          isNewPersonalBest={isNewPersonalBest}
           handleRestart={handleTestRestart}
           WPM={WPM}
         />

@@ -4,69 +4,66 @@ import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "../../ty
 import type { CharStatus, TestText } from "../../types/TestTypes";
 
 type HomePageProps = {
+  
   accuracy: number;
-  setAccuracy: React.Dispatch<React.SetStateAction<number>>
-  isStarted: boolean;
-  time: TimeDropdownValue;
-  setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>;
-  language: LanguageValue;
-  setLanguage: React.Dispatch<React.SetStateAction<LanguageValue>>;
-  timeLeft: number;
-  setTimeLeft: React.Dispatch<React.SetStateAction<number>>
-  incorrectChar: number;
-  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   correctChar: number;
-  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  charStatus: CharStatus[]
+  difficulty: DifficultyValue;
   finished: boolean;
-  setCorrectChar: React.Dispatch<React.SetStateAction<number>>
+  incorrectChar: number;
+  isStarted: boolean;
+  index: number;
+  language: LanguageValue;
+  time: TimeDropdownValue;
+  timeLeft: number;
+  test: TestText;
+  totalChar: number;
+  WPM: number;
+
+  setAccuracy: React.Dispatch<React.SetStateAction<number>>
   setCompleted: React.Dispatch<React.SetStateAction<number>>
+  setCorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
+  setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>;
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  setIndex: React.Dispatch<React.SetStateAction<number>>
   setIncorrectChar: React.Dispatch<React.SetStateAction<number>>
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
+  setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>;
+  setTimeLeft: React.Dispatch<React.SetStateAction<number>>
+  setTest: React.Dispatch<React.SetStateAction<TestText>>
+  setTotalChar: React.Dispatch<React.SetStateAction<number>>
+  setLanguage: React.Dispatch<React.SetStateAction<LanguageValue>>;
   setPersonalBest: React.Dispatch<React.SetStateAction<number>>
   setIsNewPersonalBest: React.Dispatch<React.SetStateAction<boolean>>
-  difficulty: DifficultyValue
-  setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>;
-  WPM: number;
+
   setWPM: React.Dispatch<React.SetStateAction<number>>
-  charStatus: CharStatus[]
-  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
-  index: number
-  setIndex: React.Dispatch<React.SetStateAction<number>>
-  test: TestText
-  setTest: React.Dispatch<React.SetStateAction<TestText>>
-  totalChar: number;
-  setTotalChar: React.Dispatch<React.SetStateAction<number>>
+
   handleRestart: () => void
 }
 
 export function HomePage(
   {
-    accuracy,
-    setAccuracy,
-    isStarted,
-    incorrectChar,
-    setIsStarted,
-    setTime,
-    time,
-    language,
-    timeLeft,
-    setTimeLeft,
-    correctChar,
-    setFinished,
-    finished,
-    setCorrectChar,
-    setCompleted,
-    setIncorrectChar,
-    setPersonalBest,
-    setIsNewPersonalBest,
-    difficulty,
-    setDifficulty,
-    setLanguage,
-    WPM,
-    setWPM,
+    accuracy, setAccuracy,
+    correctChar, setCorrectChar,
     charStatus, setCharStatus,
+    setCompleted,
+    difficulty, setDifficulty,
+    finished, setFinished,
+    incorrectChar, setIncorrectChar,
+    isStarted, setIsStarted,
     index, setIndex,
+    language, setLanguage,
+    time, setTime,
+    timeLeft, setTimeLeft,
     test, setTest,
     totalChar, setTotalChar,
+
+    setPersonalBest,
+    setIsNewPersonalBest,
+
+    WPM, setWPM,
+
     handleRestart,
   }: HomePageProps
 ) {

@@ -1,5 +1,7 @@
 import IconNewPB from '../../assets/icons/icon-new-pb.svg';
 import IconCompleted from '../../assets/icons/icon-completed.svg';
+import IconStarOne from '../../assets/images/pattern-star-1.svg';
+import IconStarTwo from '../../assets/images/pattern-star-2.svg';
 
 import confetti from "canvas-confetti";
 
@@ -92,10 +94,10 @@ export function ResultPage({
   return (
     <section className=" relative flex flex-col gap-8 mt-12">
       <ResultIcon
-        icon={icon}
         animationCircle={animationCircle}
         animationColor={animationColor}
         animationSize={animationSize}
+        icon={icon}
       />
       <ResultContent
         label={label}
@@ -127,6 +129,17 @@ export function ResultPage({
         colors='hover:bg-(--neutral-800) bg-(--neutral-0) hover:text-white text-(--neutral-900)'
         invert=' invert group-hover:invert-0 '
       />
+      {(!isNewPersonalBest || completed >= 1) &&(
+        <>
+          <span className='absolute sm:top-2/3 sm:bottom-auto bottom-10 sm:right-7 right-5 animate-ping [animation-duration:2.5s]'>
+            <img src={IconStarOne} />
+          </span>
+          <span className='absolute sm:top-20 top-5 sm:left-7 left-5 animate-ping [animation-duration:2.5s]'>
+            <img src={IconStarTwo} />
+          </span>
+        </>
+
+      )}
     </section>
   )
 }
