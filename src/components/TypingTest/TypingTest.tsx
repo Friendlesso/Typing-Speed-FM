@@ -78,10 +78,10 @@ export function TypingTest(
     const typedChar = e.key;
     const expectedChar = test.text[index];
 
-    if (typedChar.length !== 1 || e.key === 'Backspace') {
-      e.preventDefault();
-      return;
-    };
+    // if (typedChar.length !== 1 || e.key === 'Backspace') {
+    //   e.preventDefault();
+    //   return;
+    // };
 
     if (totalChar === characters.length - 1) {
       setFinished(true);
