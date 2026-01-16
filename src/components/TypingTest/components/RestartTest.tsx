@@ -1,18 +1,18 @@
 import IconRestart from '../../../assets/icons/icon-restart.svg';
 
 type RestartTestProps = {
-  handleRestart?: () => void
-  setFinished?: React.Dispatch<React.SetStateAction<boolean>>
+  handleRestart: () => void
   border?: string
   colors: string
   invert: string
+  label: string
 }
 
 export function RestartTest({
   handleRestart,
-  setFinished,
   border,
   colors,
+  label,
   invert
 }: RestartTestProps) {
   return (
@@ -36,12 +36,9 @@ export function RestartTest({
           cursor-pointer
           transition-colors duration-200
         `}
-        onClick={() => {
-          handleRestart?.();
-          setFinished?.(false);
-        }}
+        onClick={handleRestart}
       >
-        Restart Test
+        {label}
         <img
           src={IconRestart}
           alt="Restart test icon"

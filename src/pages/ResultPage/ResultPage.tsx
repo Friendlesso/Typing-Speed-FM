@@ -1,11 +1,14 @@
 import IconNewPB from '../../assets/icons/icon-new-pb.svg';
 import IconCompleted from '../../assets/icons/icon-completed.svg';
 
+import confetti from "canvas-confetti";
+
 import { ResultContent } from "../../components/ResultContent/ResultContent";
 import { ResultIcon } from '../../components/ResultIcon/ResultIcon';
 import { TotalCharStat } from "../../components/TotalCharStat/TotalCharStat";
 import { TypingStats } from "../../components/TypingStats";
 import { RestartTest } from '../../components/TypingTest/components/RestartTest';
+import { useEffect } from 'react';
 
 type ResultPageProps = {
   accuracy: number;
@@ -13,7 +16,9 @@ type ResultPageProps = {
   completed: number;
   incorrectChar: number;
   isNewPersonalBest: boolean;
+  handleRestart: () => void;
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   WPM: number;
 }
 
@@ -23,7 +28,7 @@ export function ResultPage({
   completed,
   isNewPersonalBest,
   incorrectChar,
-  setFinished,
+  handleRestart,
   WPM,
 }: ResultPageProps) {
 
@@ -57,8 +62,35 @@ export function ResultPage({
     animationSize = "size-18"
   }
 
+  useEffect(() => {
+    if (!isNewPersonalBest || completed <= 1) return;
+
+    confetti({
+      particleCount: 160,
+      angle: 60,
+      spread: 70,
+      startVelocity: 45,
+      origin: {
+        x: 0,
+        y: 1
+      }
+    })
+
+    confetti({
+      particleCount: 120,
+      angle: 120,
+      spread: 70,
+      startVelocity: 45,
+      origin: {
+        x: 1,
+        y: 1
+      }
+    })
+
+  }, [isNewPersonalBest, completed])
+
   return (
-    <section className="flex flex-col gap-8 mt-12">
+    <section className=" relative flex flex-col gap-8 mt-12">
       <ResultIcon
         icon={icon}
         animationCircle={animationCircle}
@@ -90,7 +122,8 @@ export function ResultPage({
         />
       </div>
       <RestartTest
-        setFinished={setFinished}
+        label="Go Again"
+        handleRestart={handleRestart}
         colors='hover:bg-(--neutral-800) bg-(--neutral-0) hover:text-white text-(--neutral-900)'
         invert=' invert group-hover:invert-0 '
       />

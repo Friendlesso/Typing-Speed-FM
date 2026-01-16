@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Test } from "./components/Test";
 import type { CharStatus, TestText } from "../../types/TestTypes";
 import { getRandomTest } from "../../utils/getRandomTest";
@@ -26,6 +26,15 @@ type TypingTestProps = {
   finished: boolean;
   setPersonalBest: React.Dispatch<React.SetStateAction<number>>
   setWPM: React.Dispatch<React.SetStateAction<number>>
+  charStatus: CharStatus[]
+  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
+  index: number
+  setIndex: React.Dispatch<React.SetStateAction<number>>
+  test: TestText
+  setTest: React.Dispatch<React.SetStateAction<TestText>>
+  totalChar: number;
+  setTotalChar: React.Dispatch<React.SetStateAction<number>>
+  handleRestart: () => void
 }
 
 export function TypingTest(
@@ -43,13 +52,15 @@ export function TypingTest(
     language,
     timeLeft,
     setFinished,
-    setWPM
+    setWPM,
+    charStatus,
+    setCharStatus,
+    index, setIndex,
+    test, setTest,
+    totalChar, setTotalChar,
+    handleRestart
   }: TypingTestProps) {
-  const [charStatus, setCharStatus] = useState<Array<CharStatus>>([]);
-  const [index, setIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null)
-  const [test, setTest] = useState<TestText>(getRandomTest(language,difficulty));
-  const [totalChar, setTotalChar] = useState(0);
 
   const characters = test?.text.split("");
 
@@ -58,20 +69,8 @@ export function TypingTest(
   })
 
   useEffect(() => {
-    setTest(getRandomTest(language,difficulty))
-  }, [difficulty, language])
-
-  // Function to Handle restarting the test
-  const handleTestRestart = () => {
-    setCorrectChar(0);
-    setCharStatus([]);
-    setIncorrectChar(0);
-    setIndex(0);
-    setIsStarted(false);
-    setTotalChar(0);
-    setIsStarted(false);
-    setTest(getRandomTest(language,difficulty))
-  }
+    setTest(getRandomTest(language, difficulty))
+  }, [difficulty, language, setTest])
 
   // Function to handleKeyDown for Typing
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -135,7 +134,8 @@ export function TypingTest(
       />
       {isStarted && (
         <RestartTest
-          handleRestart={handleTestRestart}
+          label="Restart Test"
+          handleRestart={handleRestart}
           border="border-t-2 border-(--neutral-700)"
           colors=" bg-(--neutral-800) hover:bg-(--neutral-0) text-white hover:text-(--neutral-900) "
           invert="group-hover:invert "

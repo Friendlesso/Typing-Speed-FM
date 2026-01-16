@@ -1,6 +1,7 @@
 import { TypingHUD } from "../../components/TypingHUD/TypingHUD";
 import { TypingTest } from "../../components/TypingTest/TypingTest";
 import type { DifficultyValue, LanguageValue, TimeDropdownValue } from "../../types/dropdown";
+import type { CharStatus, TestText } from "../../types/TestTypes";
 
 type HomePageProps = {
   accuracy: number;
@@ -26,6 +27,15 @@ type HomePageProps = {
   setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>;
   WPM: number;
   setWPM: React.Dispatch<React.SetStateAction<number>>
+  charStatus: CharStatus[]
+  setCharStatus: React.Dispatch<React.SetStateAction<CharStatus[]>>;
+  index: number
+  setIndex: React.Dispatch<React.SetStateAction<number>>
+  test: TestText
+  setTest: React.Dispatch<React.SetStateAction<TestText>>
+  totalChar: number;
+  setTotalChar: React.Dispatch<React.SetStateAction<number>>
+  handleRestart: () => void
 }
 
 export function HomePage(
@@ -53,6 +63,11 @@ export function HomePage(
     setLanguage,
     WPM,
     setWPM,
+    charStatus, setCharStatus,
+    index, setIndex,
+    test, setTest,
+    totalChar, setTotalChar,
+    handleRestart,
   }: HomePageProps
 ) {
   return (
@@ -92,6 +107,11 @@ export function HomePage(
         setFinished={setFinished}
         finished={finished}
         setWPM={setWPM}
+        charStatus={charStatus} setCharStatus={setCharStatus}
+        index={index} setIndex={setIndex}
+        test={test} setTest={setTest}
+        totalChar={totalChar} setTotalChar={setTotalChar}
+        handleRestart={handleRestart}
       />
     </div>
   )
