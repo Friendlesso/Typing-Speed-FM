@@ -75,12 +75,11 @@ export function TypingTest(
       setIsStarted(true);
     }
 
-    const typedChar = e.key;
+    let typedChar = e.key;
     const expectedChar = test.text[index];
 
-    if ( e.key === 'Backspace' || e.key === "CapsLock") {
-      e.preventDefault();
-      return;
+    if ( typedChar === "undefined" && e.nativeEvent instanceof InputEvent) {
+      typedChar = (e.nativeEvent as any).data || "";
     };
 
     if (totalChar === characters.length - 1) {
