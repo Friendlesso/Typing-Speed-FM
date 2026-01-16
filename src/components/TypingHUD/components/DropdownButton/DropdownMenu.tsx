@@ -11,7 +11,9 @@ type DropdownMenuProps<T> = {
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
-  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
+
+  handleRestart: () => void
+
 }
 
 export function DropdownMenu<T>({
@@ -20,10 +22,10 @@ export function DropdownMenu<T>({
   setOpen,
   selected,
   langStyle,
-  setIsStarted,
   setButtonLabel,
   selectedSetting,
   localStorageKey,
+  handleRestart
 }: DropdownMenuProps<T>) {
   return (
     <ul
@@ -55,9 +57,9 @@ export function DropdownMenu<T>({
           selected={selected}
           langStyle={langStyle}
           setButtonLabel={setButtonLabel}
-          setIsStarted={setIsStarted}
           selectedSetting={selectedSetting}
           localStorageKey={localStorageKey}
+          handleRestart={handleRestart}
         />
       )}
     </ul>

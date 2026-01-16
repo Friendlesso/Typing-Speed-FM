@@ -6,8 +6,8 @@ type DropdownItemCompProps<T> = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
-  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   localStorageKey: string;
+  handleRestart: () => void
 }
 
 export function DropdownItem<T>({
@@ -17,9 +17,9 @@ export function DropdownItem<T>({
   selected,
   langStyle,
   setButtonLabel,
-  setIsStarted,
   localStorageKey,
-  selectedSetting
+  selectedSetting,
+  handleRestart
 }: DropdownItemCompProps<T>) {
 
   const isSelected = value == selected;
@@ -57,7 +57,7 @@ export function DropdownItem<T>({
           setButtonLabel(langStyle ? '' : label)
           selectedSetting(value)
           setOpen(false);
-          setIsStarted(false);
+          handleRestart();
           localStorage.setItem(localStorageKey, String(value));
         }}
       >

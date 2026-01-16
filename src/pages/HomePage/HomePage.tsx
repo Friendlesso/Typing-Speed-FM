@@ -73,12 +73,14 @@ export function HomePage(
         accuracy={accuracy}
         difficulty={difficulty} setDifficulty={setDifficulty}
         finished={finished} setFinished={setFinished}
-        isStarted={isStarted} setIsStarted={setIsStarted}
+        isStarted={isStarted}
         language={language} setLanguage={setLanguage}
         time={time} setTime={setTime}
         timeLeft={timeLeft} setTimeLeft={setTimeLeft}
         setCompleted={setCompleted}
         WPM={WPM}
+
+        handleRestart={handleRestart}
       />
       <TypingTest
         setAccuracy={setAccuracy}

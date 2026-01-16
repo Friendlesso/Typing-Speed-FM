@@ -18,13 +18,13 @@ type TypingHUDProps = {
   setCompleted: React.Dispatch<React.SetStateAction<number>>
   setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
-  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
   setLanguage: React.Dispatch<React.SetStateAction<LanguageValue>>;
   setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>
 
   WPM: number;
 
+  handleRestart: () => void
 }
 
 export function TypingHUD(
@@ -32,7 +32,7 @@ export function TypingHUD(
     accuracy,
     difficulty, setDifficulty,
     finished, setFinished,
-    isStarted, setIsStarted,
+    isStarted,
     language, setLanguage,
     time, setTime,
     timeLeft, setTimeLeft,
@@ -40,6 +40,7 @@ export function TypingHUD(
     setCompleted,
 
     WPM,
+    handleRestart
   }: TypingHUDProps
 ) {
   return (
@@ -92,8 +93,8 @@ export function TypingHUD(
           selected={difficulty}
           settingLabel="Difficulty"
           selectedSetting={setDifficulty}
-          setIsStarted={setIsStarted}
           localStorageKey="diff"
+          handleRestart={handleRestart}
         />
         <DropdownButton
           buttonIcon={IconDropDown}
@@ -102,8 +103,8 @@ export function TypingHUD(
           selected={time}
           settingLabel="Mode"
           selectedSetting={setTime}
-          setIsStarted={setIsStarted}
           localStorageKey="time"
+          handleRestart={handleRestart}
         />
         <DropdownButton<LanguageValue>
           buttonIcon={IconLang}
@@ -111,9 +112,9 @@ export function TypingHUD(
           items={languagesItems}
           selected={language}
           selectedSetting={setLanguage}
-          setIsStarted={setIsStarted}
           localStorageKey="lang"
           langStyle='sm:w-fit'
+          handleRestart={handleRestart}
         />
       </div>
     </section>

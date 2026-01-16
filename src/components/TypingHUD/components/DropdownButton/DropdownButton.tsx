@@ -12,7 +12,8 @@ type DropdownButtonProps<T> = {
   langStyle?: string | undefined;
 
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
-  setIsStarted: React.Dispatch<React.SetStateAction<boolean>>
+
+  handleRestart: () => void
 }
 
 export function DropdownButton<T>({
@@ -22,9 +23,9 @@ export function DropdownButton<T>({
   selected,
   settingLabel,
   selectedSetting,
-  setIsStarted,
   localStorageKey,
-  langStyle
+  langStyle,
+  handleRestart
 }: DropdownButtonProps<T>) {
 
   const stored = localStorage.getItem(localStorageKey)
@@ -88,9 +89,9 @@ export function DropdownButton<T>({
           setOpen={setOpen}
           selected={selected}
           selectedSetting={selectedSetting}
-          setIsStarted={setIsStarted}
           localStorageKey={localStorageKey}
           langStyle={langStyle}
+          handleRestart={handleRestart}
         />
       </div>
     </div>
