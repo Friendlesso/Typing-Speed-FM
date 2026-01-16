@@ -40,7 +40,7 @@ export function Test(
       className={`
           relative
           flex flex-col items-center
-          h-[80%]
+          min-h-[50vh]
           ${isStarted
             ? 'blur-none'
             : 'blur-md'

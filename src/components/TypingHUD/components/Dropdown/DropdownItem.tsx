@@ -54,16 +54,11 @@ export function DropdownItem<T>({
       <button
         className="w-full text-left cursor-pointer"
         onClick={() => {
-          if (langStyle) {
-            setButtonLabel('');
-            localStorage.setItem(localStorageKey, String(value))
-          } else {
-            setButtonLabel(label);
-            localStorage.setItem(localStorageKey, String(label));
-          }
+          setButtonLabel(langStyle ? '' : label)
           selectedSetting(value)
           setOpen(false);
           setIsStarted(false);
+          localStorage.setItem(localStorageKey, String(value));
         }}
       >
         {label}

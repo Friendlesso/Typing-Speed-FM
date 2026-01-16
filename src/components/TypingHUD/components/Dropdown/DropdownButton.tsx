@@ -75,7 +75,7 @@ export function DropdownButton<T>({
             setOpen(prev => !prev);
           }}
         >
-          {buttonLabel}
+          {!langStyle && buttonLabel}
           <img
             src={buttonIcon}
           />
