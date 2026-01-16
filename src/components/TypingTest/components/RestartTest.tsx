@@ -23,6 +23,7 @@ export function RestartTest({
           flex 
           bg-(--neutral-800) hover:bg-(--neutral-0)
           text-white hover:text-(--neutral-900) 
+          font-semibold text-xl
           gap-2.5 mt-8 px-4 py-2.5 
           rounded-xl
           cursor-pointer

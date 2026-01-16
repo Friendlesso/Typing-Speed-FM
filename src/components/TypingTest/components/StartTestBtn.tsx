@@ -27,7 +27,7 @@ export function StartTestBtn(
       <button
         className={`
             bg-(--blue-600) hover:bg-(--blue-400)
-            font-semibold text-2xl/[120%] -tracking-[0.019rem]
+            font-semibold sm:text-2xl/[120%] text-xl/[120%] -tracking-[0.019rem]
             hover:scale-95
             py-4 px-6
             w-fit
@@ -42,7 +42,7 @@ export function StartTestBtn(
       >
         Start typing test
       </button>
-      <p className="font-semibold text-xl/[120%] tracking-[0.019rem]">
+      <p className="font-semibold text-xl/[120%] tracking-[0.019rem] text-center">
         Or click the text and start typing
       </p>
     </div>
