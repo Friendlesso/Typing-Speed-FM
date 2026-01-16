@@ -48,6 +48,10 @@ export function TypingTest(
 
   const characters = test?.text.split("");
 
+  useEffect(() => {
+      inputRef.current?.focus();
+  })
+
   // Function to Handle restarting the test
   const handleTestRestart = () => {
     setCorrectChar(0);
@@ -61,6 +65,9 @@ export function TypingTest(
 
   // Function to handleKeyDown for Typing
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isStarted) {
+      setIsStarted(true);
+    }
 
     const typedChar = e.key;
     const expectedChar = test.text[index];

@@ -24,6 +24,8 @@ export function Test(
   }: TestProps
 ) {
 
+  
+
   const getCharClass = (charIndex: number) => {
     if (charIndex < charStatus.length) {
       return charStatus[charIndex] === 'correct'
