@@ -10,6 +10,7 @@ type TypingHUDProps = {
   setFinished: React.Dispatch<React.SetStateAction<boolean>>
   finished: boolean;
   time: TimeDropdownValue;
+  difficulty: DifficultyValue
   setTime: React.Dispatch<React.SetStateAction<TimeDropdownValue>>
   setDifficulty: React.Dispatch<React.SetStateAction<DifficultyValue>>
   timeLeft: number;
@@ -27,6 +28,7 @@ export function TypingHUD(
     finished,
     time,
     setTime,
+    difficulty,
     setDifficulty,
     timeLeft,
     setIsStarted,
@@ -85,6 +87,7 @@ export function TypingHUD(
           defaultLabel="Easy"
           localStorageKey="diff"
           buttonIcon={IconDropDown}
+          selected={difficulty}
           selectedSetting={setDifficulty}
           setIsStarted={setIsStarted}
         />
@@ -94,6 +97,7 @@ export function TypingHUD(
           defaultLabel="60s"
           localStorageKey="time"
           buttonIcon={IconDropDown}
+          selected={time}
           selectedSetting={setTime}
           setIsStarted={setIsStarted}
         />

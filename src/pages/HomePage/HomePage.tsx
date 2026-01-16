@@ -61,6 +61,7 @@ export function HomePage(
         finished={finished}
         WPM={WPM}
         time={time}
+        difficulty={difficulty}
         setTime={setTime}
         setIsStarted={setIsStarted}
         setDifficulty={setDifficulty}

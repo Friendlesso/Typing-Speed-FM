@@ -4,6 +4,7 @@ import { DropdownItem } from "./DropdownItem"
 type DropdownMenuProps<T> = {
   items: DropdownItemProp<T>[]
   isOpen: boolean
+  selected: T
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   setButtonLabel: React.Dispatch<React.SetStateAction<string>>
   selectedSetting: React.Dispatch<React.SetStateAction<T>>
@@ -15,6 +16,7 @@ export function DropdownMenu<T>({
   items,
   isOpen,
   setOpen,
+  selected,
   setIsStarted,
   setButtonLabel,
   selectedSetting,
@@ -30,6 +32,7 @@ export function DropdownMenu<T>({
         w-full
         z-10
         rounded-lg
+        flex flex-col gap-2 py-2.5
         transition-[max-height, opacity] duration-300 ease-in-out
         overflow-hidden
         ${isOpen
@@ -44,6 +47,7 @@ export function DropdownMenu<T>({
           label={item.label}
           value={item.value}
           setOpen={setOpen}
+          selected={selected}
           setButtonLabel={setButtonLabel}
           setIsStarted={setIsStarted}
           selectedSetting={selectedSetting}
