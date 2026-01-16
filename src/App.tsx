@@ -7,7 +7,7 @@ import type { DifficultyValue, TimeDropdownValue } from "./types/dropdown";
 function App() {
   const [accuracy, setAccuracy] = useState(0);
   const [correctChar, setCorrectChar] = useState(0);
-  const [finished, setFinished] = useState(false);
+  const [finished, setFinished] = useState(true);
   const [incorrectChar, setIncorrectChar] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [isNewPersonalBest, setIsNewPersonalBest] = useState(false);
@@ -96,6 +96,7 @@ const [time, setTime] = useState<TimeDropdownValue>(() => {
           completed={completed}
           incorrectChar={incorrectChar}
           isNewPersonalBest={isNewPersonalBest}
+          setFinished={setFinished}
           WPM={WPM}
         />
       )}

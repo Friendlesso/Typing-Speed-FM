@@ -5,6 +5,7 @@ import { ResultContent } from "../../components/ResultContent/ResultContent";
 import { ResultIcon } from '../../components/ResultIcon/ResultIcon';
 import { TotalCharStat } from "../../components/TotalCharStat/TotalCharStat";
 import { TypingStats } from "../../components/TypingStats";
+import { GoAgain } from '../../components/GoAgain/GoAgain';
 
 type ResultPageProps = {
   accuracy: number;
@@ -12,6 +13,7 @@ type ResultPageProps = {
   completed: number;
   incorrectChar: number;
   isNewPersonalBest: boolean;
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
   WPM: number;
 }
 
@@ -21,6 +23,7 @@ export function ResultPage({
   completed,
   isNewPersonalBest,
   incorrectChar,
+  setFinished,
   WPM,
 }: ResultPageProps) {
 
@@ -56,7 +59,7 @@ export function ResultPage({
 
   return (
     <section className="flex flex-col gap-8 mt-12">
-      <ResultIcon 
+      <ResultIcon
         icon={icon}
         animationCircle={animationCircle}
         animationColor={animationColor}
@@ -86,8 +89,9 @@ export function ResultPage({
           incorrectChar={incorrectChar}
         />
       </div>
-      <div>
-      </div>
+      <GoAgain
+        setFinished={setFinished}
+      />
     </section>
   )
 }
