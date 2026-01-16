@@ -73,7 +73,6 @@ export function Test(
       <input
         ref={inputRef}
         type="text"
-        readOnly
         name="TextInput"
         onClick={() => {
           setIsStarted(true);
@@ -82,6 +81,7 @@ export function Test(
           absolute
           top-0 right-0 left-0 bottom-0
           outline-none
+          opacity-0
           cursor-pointer
         `}
         onKeyDown={handleKeyDown}
