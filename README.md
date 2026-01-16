@@ -2,7 +2,7 @@
 
 ## A typing test app that tracks WPM, accuracy across multiple difficulty and time modes, with persistent user preferences.
 
-🔗Live Demo: [https://github.com/Friendlesso/Typing-Speed-FM]
+🔗Live Demo: [https://typing-speed-fm.onrender.com]
 📦Repository: [https://github.com/Friendlesso/Typing-Speed-FM]
 
 ## The Challenge
@@ -79,3 +79,15 @@ npm i
 ```bash
 npm run dev
 ```
+
+## Acknowlegements
+ - This project was inspider by and based on a challenge from **[Frontend Mentor](https://www.frontendmentor.io/)**.
+ - Thanks to Frontend Mentor for providing design inspiration and test cases.
+
+## Author 
+**Mihailo** - Developer
+
+  - GitHub [Friendlesso](https://github.com/Friendlesso)
+  - Portfolio: [](https://portfolio-miahilo.vercel.app/)
+  - Frontend Mentor: [Mihailo](https://www.frontendmentor.io/profile/Friendlesso)
+  - Emial: mihailoless@gmail.com
