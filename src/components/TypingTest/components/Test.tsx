@@ -53,7 +53,7 @@ export function Test(
           let className = getCharClass(charIndex);
 
           if (charIndex === index) {
-            className += ' border-b-2 border-(--neutral-400) pb-0.5'
+            className += ' bg-(--neutral-400)/20 rounded-sm'
           }
 
           if (status === 'incorrect') {
