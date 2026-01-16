@@ -68,10 +68,17 @@ export function Timer({
   }, [isStarted, time, setFinished, setTimeLeft, finished, setCompleted])
 
   return (
-    <div className="border-r-2 border-(--neutral-700) px-3">
-      <p className="text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem] ">
+    <div className="sm:border-r-2 border-(--neutral-700) px-3 sm:w-fit w-[33%]">
+      <p
+        className={`
+          text-(--neutral-400) 
+          sm:text-xl/[120%] -tracking-[0.0375rem] 
+          flex sm:flex-row flex-col 
+          sm:items-center items-center
+        `}
+      >
         Time:
-        <span className={` ${isStarted ? `text-(--yellow-400)` : 'text-white'} text-2xl font-bold pl-3`}>
+        <span className={` ${isStarted ? `text-(--yellow-400)` : 'text-white'} text-2xl font-bold sm:pl-3`}>
           {formattedTime}
         </span>
       </p>

@@ -22,11 +22,19 @@ export function TypingStats(
   }: TypingStatsProps
 ) {
   return (
-    <div className={`${borderClass} border-(--neutral-700)`}>
-      <p className={`text-(--neutral-400) text-xl/[120%] -tracking-[0.0375rem] ${textAligment ? `${textAligment}` : ""}`}>
+    <div className={`${borderClass} border-(--neutral-700) sm:w-fit w-[33%]`}>
+      <p
+        className={`
+          text-(--neutral-400) 
+          sm:text-xl/[120%] -tracking-[0.0375rem] 
+          flex sm:flex-row flex-col 
+          sm:items-center items-center 
+          ${textAligment ? `${textAligment}` : ""}
+        `}
+      >
         {statLabel}:
-        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold ${paddingAligment ? `${paddingAligment}` : 'pl-3'} `}>
-        {stat} {statLabel === "Accuracy" && '%'}
+        <span className={` ${isStarted ? `${textColor}` : 'text-white'} text-2xl font-bold ${paddingAligment ? `${paddingAligment}` : 'sm:pl-3'} `}>
+          {stat} {statLabel === "Accuracy" && '%'}
         </span>
       </p>
     </div>

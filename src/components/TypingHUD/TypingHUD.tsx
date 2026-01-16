@@ -43,20 +43,20 @@ export function TypingHUD(
         pb-4 gap-4 lg:gap-0
       `}
     >
-      <div className="flex items-center">
+      <div className="flex items-center sm:w-fit w-full">
         <TypingStats
           stat={WPM}
           statLabel="WPM"
           isStarted={isStarted}
           textColor="text-white"
-          borderClass="border-r-2 px-3"
+          borderClass="border-r-2 sm:px-3 px-5"
         />
         <TypingStats
           stat={accuracy}
           statLabel="Accuracy"
           isStarted={isStarted}
           textColor="text-(--red-500)"
-          borderClass="border-r-2 px-3"
+          borderClass="border-r-2 sm:px-3 px-5"
         />
         <Timer
           time={time}
