@@ -28,12 +28,14 @@ export function Timer({
   const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
   useEffect(() => {
+    if(!isStarted) return;
+
     if (typeof time === "number") {
       setTimeLeft(time);
     } else {
       setTimeLeft(0);
     }
-  }, [time, setTimeLeft])
+  }, [time, setTimeLeft, isStarted])
 
   useEffect(() => {
     if (!isStarted) return;

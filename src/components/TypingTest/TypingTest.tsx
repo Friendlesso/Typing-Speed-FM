@@ -69,6 +69,7 @@ export function TypingTest(
     setIndex(0);
     setIsStarted(false);
     setTotalChar(0);
+    setIsStarted(false);
     setTest(getRandomTest(language,difficulty))
   }
 
