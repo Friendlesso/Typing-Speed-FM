@@ -26,7 +26,6 @@ export function DropdownItem<T>({
 
   return (
     <li
-      role="MenuItem"
       className={`
         group 
         flex items-center 
