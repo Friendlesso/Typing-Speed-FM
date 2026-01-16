@@ -115,7 +115,7 @@ export function TypingHUD(
           selected={language}
           selectedSetting={setLanguage}
           setIsStarted={setIsStarted}
-          langStyle='w-fit'
+          langStyle='sm:w-fit'
         />
       </div>
     </section>

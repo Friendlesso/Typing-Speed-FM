@@ -61,7 +61,7 @@ export function DropdownButton<T>({
           items-center
           justify-center
           ${langStyle 
-            ? 'w-fit'
+            ? 'sm:w-fit w-full'
             : 'sm:w-40 w-[95%]'
           }
           gap-2.5 py-1.5 px-2.5
