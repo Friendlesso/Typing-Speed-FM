@@ -18,7 +18,7 @@ export function Timer({
   isStarted,
   time,
   timeLeft, setTimeLeft,
-  
+
   setCompleted
 
 }: TimerProps) {
@@ -29,8 +29,6 @@ export function Timer({
   const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
   useEffect(() => {
-    if (!isStarted) return;
-
     if (typeof time === "number") {
       setTimeLeft(time);
     } else {
